@@ -46,7 +46,8 @@ Src/main.o: ../Src/main.c ../Src/ARM_inits.h ../Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  ../Src/NOKIA5110_fb.h ../Src/delay.h ../Src/defPrincipais.h \
  ../Src/globais.h ../Src/Botao1FSM.h ../Src/Interpreter1FSM.h \
- ../Src/MenuFSM.h ../Src/P1_FSM.h ../Src/P1_ViewFSM.h
+ ../Src/Interpreter2FSM.h ../Src/MenuFSM.h ../Src/P1_FSM.h \
+ ../Src/P1_ViewFSM.h
 
 ../Src/ARM_inits.h:
 
@@ -153,6 +154,8 @@ Src/main.o: ../Src/main.c ../Src/ARM_inits.h ../Inc/main.h \
 ../Src/Botao1FSM.h:
 
 ../Src/Interpreter1FSM.h:
+
+../Src/Interpreter2FSM.h:
 
 ../Src/MenuFSM.h:
 

@@ -51,9 +51,6 @@ default.size.stdout \
 OBJDUMP_LIST += \
 footsies.list \
 
-OBJCOPY_HEX += \
-footsies.hex \
-
 
 # All Target
 all: footsies.elf secondary-outputs
@@ -74,17 +71,12 @@ footsies.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-footsies.hex: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "footsies.hex"
-	@echo 'Finished building: $@'
-	@echo ' '
-
 # Other Targets
 clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 .PHONY: all clean dependents
 .SECONDARY:

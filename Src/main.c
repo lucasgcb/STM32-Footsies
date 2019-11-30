@@ -23,7 +23,7 @@
 #include "NOKIA5110_fb.h"
 #include "Botao1FSM.h"
 #include "Interpreter1FSM.h"
-//#include "Interpreter2FSM.h"
+#include "Interpreter2FSM.h"
 #include "MenuFSM.h"
 #include "P1_FSM.h"
 #include "P1_ViewFSM.h"
@@ -43,6 +43,7 @@ osThreadId P1TaskHandle;
 osThreadId P1ViewHandle;
 void StartDefaultTask(void const * argument);
 void InputInterpreter(void const * argument);
+void InputInterpreter2(void const * argument);
 void Menu(void const * argument);
 void P1(void const *argument);
 void P1View(void const *argument);
@@ -56,16 +57,21 @@ int main(void)
 
   MX_GPIO_Init();
   MX_ADC1_Init();
+  MX_ADC2_Init();
+
+  HAL_ADC_Start (&hadc2);
+  HAL_ADC_Start (&hadc1);
   MX_RTC_Init();
   osThreadDef(InterpreterTask, InputInterpreter, osPriorityNormal, 0, 32);
-  //osThreadDef(InterpreterTask, InputInterpreter2, osPriorityNormal, 0, 32);
+  osThreadDef(Interpreter2Task, InputInterpreter2, osPriorityNormal, 0, 128);
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 64);
   osThreadDef(botaoTask, ObservaBotao, osPriorityNormal, 0, 32);
-  osThreadDef(MenuTask, Menu, osPriorityNormal, 0, 128);
+  osThreadDef(MenuTask, Menu, osPriorityNormal, 0, 64);
   osThreadDef(P1Task, P1, osPriorityNormal, 0, 64);
   osThreadDef(P1ViewTask, P1View, osPriorityNormal, 0, 64);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
   InterpreterTaskHandle = osThreadCreate(osThread(InterpreterTask), NULL);
+  Interpreter2TaskHandle = osThreadCreate(osThread(Interpreter2Task), NULL);
   botaoTaskHandle = osThreadCreate(osThread(botaoTask), NULL);
   MenuTaskHandle = osThreadCreate(osThread(MenuTask), NULL);
   P1TaskHandle = osThreadCreate(osThread(P1Task), NULL);
@@ -95,11 +101,25 @@ void Menu(void const * argument)
 		Rodar_Maquina_Menu();
 	}
 }
-
+void InputInterpreter2(void const * argument)
+{
+	uint16_t value;
+	char value_str[10];
+	HAL_ADC_Start (&hadc2);
+	input2 = xSemaphoreCreateBinary();
+	xSemaphoreGive(input2);
+	for(;;)
+	{
+		HAL_ADC_PollForConversion (&hadc2, 1000);
+		value = HAL_ADC_GetValue (&hadc2);
+		itoa(value,value_str,10);
+		print_seguro(0,0,value_str);
+		Rodar_Maquina_Interpretador2();
+	}
+}
 
 void InputInterpreter(void const * argument)
 {
-	HAL_ADC_Start (&hadc1);
 	input1 = xSemaphoreCreateBinary();
 	xSemaphoreGive(input1);
 	for(;;)

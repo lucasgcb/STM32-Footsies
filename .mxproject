@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/lucas/STM32CubeIDE/workspace_1.0.2/footsies/Inc
+HeaderPath=C:/Users/lucas/Desktop/STM32-Footsies/Inc
 HeaderFiles=stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;FreeRTOSConfig.h;
-SourcePath=C:/Users/lucas/STM32CubeIDE/workspace_1.0.2/footsies/Src
+SourcePath=C:/Users/lucas/Desktop/STM32-Footsies/Src
 SourceFiles=stm32f1xx_it.c;stm32f1xx_hal_msp.c;main.c;freertos.c;stm32f1xx_hal_timebase_tim.c;
 
 [PreviousLibFiles]

@@ -1,6 +1,6 @@
 #ifndef globais_H_
 #define globais_H_
-#define DEBUG_p1
+#define DEBUG_P2
 
 typedef struct pontos{
 	uint32_t x1;

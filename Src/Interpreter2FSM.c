@@ -69,13 +69,13 @@ uint32_t P2_INTERPRETER(uint32_t value)
 		return ATK_2;
 	}
 
-	if(value>4050 && value<=4095)
+	if(value>2600)
 	{
 		return DIREITA_FRENTE_2;
 	}
 	else
 	{
-		if(value>4095 || value<=2000)
+		if(value<=1900)
 		{
 			return ESQUER_ATRAS_2;
 		}
@@ -206,7 +206,7 @@ void Sm_DEBOUNCE_Int2(void)
 							SmState_Int2=STATE_DEBOUNCE_Int2;
 						break;
 					case ESQUER_ATRAS_2:
-						osDelay(DELAY_INT2);
+						osDelay(DELAY_INT2*20);
 						adc_value2 = HAL_ADC_GetValue (&hadc2);
 						if(P2_INTERPRETER(adc_value2) == ESQUER_ATRAS_2)
 							SmState_Int2=STATE_Left_Int2;
@@ -214,7 +214,7 @@ void Sm_DEBOUNCE_Int2(void)
 							SmState_Int2=STATE_DEBOUNCE_Int2;
 						break;
 					case NEUTRO_2:
-						osDelay(DELAY_INT2*20);
+						osDelay(DELAY_INT2*10);
 						adc_value2 = HAL_ADC_GetValue (&hadc2);
 						if(P2_INTERPRETER(adc_value2) == NEUTRO_2)
 							SmState_Int2=STATE_Neutral_Int2;
@@ -242,7 +242,7 @@ void Rodar_Maquina_Interpretador2(void)
 	HAL_ADC_PollForConversion (&hadc2, 1000);
 	if(SmState_Int2 < NUM_STATES_Int2)
 	{
-		#ifdef DEBUG
+		#ifdef DEBUG_P2
 		print_seguro(20,20,input_buffer1);
 		#endif
 		(*StateMachine_Interpretador2[SmState_Int2].func)();
