@@ -1,0 +1,4 @@
+delay.c:35:6:prep_asm	4	static,ignoring_inline_asm
+delay.c:42:6:atraso_ms	16	static,ignoring_inline_asm
+delay.c:57:6:atraso_us	16	static,ignoring_inline_asm
+delay.c:73:6:atraso_loops	24	static

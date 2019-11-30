@@ -1,0 +1,14 @@
+Interpreter1FSM.c:146:6:Sm_ATKPressed_Int1	8	static
+Interpreter1FSM.c:129:6:Sm_NeutralPressed_Int1	8	static
+Interpreter1FSM.c:113:6:Sm_RightPressed_Int1	8	static
+Interpreter1FSM.c:162:6:Sm_LeftPressed_Int1	8	static
+Interpreter1FSM.c:89:6:Sm_Right_Int1	16	static
+Interpreter1FSM.c:107:6:Sm_ATK_Int1	16	static
+Interpreter1FSM.c:95:6:Sm_Left_Int1	16	static
+Interpreter1FSM.c:101:6:Sm_Neutral_Int1	16	static
+Interpreter1FSM.c:177:6:Sm_Edge_Int1	8	static
+Interpreter1FSM.c:191:6:Sm_DEBOUNCE_Int1	16	static
+Interpreter1FSM.c:11:6:AdicionarNaLista1	16	static
+Interpreter1FSM.c:24:7:lerDoInput1	16	static
+Interpreter1FSM.c:58:10:P1_INTERPRETER	0	static
+Interpreter1FSM.c:239:6:Rodar_Maquina_Interpretador	8	static

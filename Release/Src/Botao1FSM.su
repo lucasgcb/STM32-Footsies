@@ -1,0 +1,4 @@
+Botao1FSM.c:18:6:Sm_BotaoON	8	static
+Botao1FSM.c:36:6:Sm_BotaoOFF	8	static
+Botao1FSM.c:53:6:Sm_DEBOUNCE	8	static
+Botao1FSM.c:77:6:Rodar_Maquina_Botao1	0	static

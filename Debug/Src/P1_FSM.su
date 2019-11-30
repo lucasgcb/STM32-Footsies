@@ -1,0 +1,17 @@
+P1_FSM.c:29:6:Sm_P1_MENU	8	static
+P1_FSM.c:39:6:Sm_P1_RoundStart	8	static
+P1_FSM.c:49:6:Sm_P1_Idle	8	static
+P1_FSM.c:72:6:Sm_P1_Idle_Recover	8	static
+P1_FSM.c:101:6:Sm_P1_Forward	8	static
+P1_FSM.c:121:6:Sm_P1_DashForward	8	static
+P1_FSM.c:136:6:Sm_P1_DashBack	8	static
+P1_FSM.c:152:6:Sm_P1_Back	8	static
+P1_FSM.c:170:6:Sm_P1_ATK1	8	static
+P1_FSM.c:179:6:Sm_P1_ATK2	8	static
+P1_FSM.c:189:6:Sm_P1_ATK2_Recover	8	static
+P1_FSM.c:204:6:Sm_P1_ATK1_Recover	8	static
+P1_FSM.c:230:6:Sm_P1_Hit	8	static
+P1_FSM.c:238:6:Sm_P1_Block	8	static
+P1_FSM.c:245:6:Sm_P1_Dying	8	static
+P1_FSM.c:252:6:Sm_P1_Dead	8	static
+P1_FSM.c:260:6:Rodar_Maquina_P1	8	static
