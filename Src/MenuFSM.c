@@ -178,13 +178,19 @@ void print_roundstart(void)
 					osDelay(1000);
 					deleta_figura_seguro(&p, &quatro);
 					break;
+		case 5:
+					print_figura_seguro(&p, &final);
+					osDelay(500);
+					print_figura_seguro(&pb, &BRIGUE);
+					osDelay(1000);
+					deleta_figura_seguro(&p, &quatro);
+					break;
 		default:
 					break;
 	}
 	deleta_figura_seguro(&pb, &BRIGUE);
 	deleta_figura_seguro(&pr, &ROUND);
 
-	print_rounds();
 }
 void Sm_Arena1P_RoundStart(void)
 {
@@ -192,6 +198,8 @@ void Sm_Arena1P_RoundStart(void)
 	SmState_P2 = STATE_PLAYER_RoundStart;
 	print_roundstart();
 	SmState_Menu = STATE_Arena1P_ONGOING;
+
+	print_rounds();
 }
 
 void Sm_Arena1P_ONGOING(void)

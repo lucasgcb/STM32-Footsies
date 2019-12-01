@@ -131,6 +131,7 @@ extern const figura_t um;
 extern const figura_t dois;
 extern const figura_t tres;
 extern const figura_t quatro;
+extern const figura_t final;
 extern const figura_t cursor;
 extern const figura_t xablauSoft;
 extern const figura_t fig2;

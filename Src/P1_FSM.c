@@ -118,6 +118,9 @@ void Sm_P1_Forward(void)
 			SmState_P1 = STATE_PLAYER_DashForward;
 			return;
 		}
+	}
+	if(SmState_P1 == STATE_PLAYER_Forward)
+	{
 		if(SmState_Int1==STATE_LeftPressed_Int1)
 				SmState_P1 = STATE_PLAYER_Back;
 		if(SmState_Int1==STATE_NeutralPressed_Int1)
@@ -175,6 +178,10 @@ void Sm_P1_Back(void)
 			SmState_P1 = STATE_PLAYER_DashBack;
 			return;
 		}
+
+	}
+	if(SmState_P1 == STATE_PLAYER_Back)
+	{
 		if(SmState_Int1==STATE_RightPressed_Int1)
 			SmState_P1 = STATE_PLAYER_Forward;
 		if(SmState_Int1==STATE_NeutralPressed_Int1)
@@ -255,7 +262,8 @@ void Sm_P1_Hit(void)
 	print_seguro(0,0,"state: p1_hit");
 	#endif
 	osDelay(800);
-	SmState_P1 = STATE_PLAYER_Idle_Recover;
+	if(SmState_P1 == STATE_PLAYER_Hit)
+		SmState_P1 = STATE_PLAYER_Idle_Recover;
 }
 
 void Sm_P1_Block(void)

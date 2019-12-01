@@ -2,11 +2,11 @@ MenuFSM.c:39:6:Sm_Menu	32	static
 MenuFSM.c:28:6:Sm_PowerOn	32	static
 MenuFSM.c:46:6:Sm_Menu1P	64	static
 MenuFSM.c:68:6:Sm_Menu2P	64	static
-MenuFSM.c:254:6:Sm_GameOver	16	static
-MenuFSM.c:237:6:Sm_Arena2P_ONGOING	16	static
+MenuFSM.c:262:6:Sm_GameOver	16	static
+MenuFSM.c:245:6:Sm_Arena2P_ONGOING	16	static
 MenuFSM.c:92:6:print_rounds	80	static
-MenuFSM.c:197:6:Sm_Arena1P_ONGOING	16	static
-MenuFSM.c:189:6:Sm_Arena1P_RoundStart	96	static
-MenuFSM.c:229:6:Sm_Arena2P_RoundStart	96	static
+MenuFSM.c:205:6:Sm_Arena1P_ONGOING	16	static
+MenuFSM.c:237:6:Sm_Arena2P_RoundStart	96	static
 MenuFSM.c:144:6:print_roundstart	96	static
-MenuFSM.c:265:6:Rodar_Maquina_Menu	8	static
+MenuFSM.c:195:6:Sm_Arena1P_RoundStart	88	static
+MenuFSM.c:273:6:Rodar_Maquina_Menu	8	static

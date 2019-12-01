@@ -45,6 +45,8 @@ void Sm_P2View_RoundStart(void)
 	deleta_figura_invertido_seguro(&posP2, &p1_idle);
 	posP2.x1 = rstartP2.x1;
 	print_figura_invertido_seguro(&posP2, &p1_idle);
+
+	osDelay(updateRate);
 }
 void Sm_P2View_Idle(void)
 {
