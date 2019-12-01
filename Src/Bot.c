@@ -62,7 +62,9 @@ void Sm_APPROACH(void)
 }
 void Sm_RETREAT(void)
 {
+	SmState_Int2 = STATE_RightPressed_Int2;
 	osDelay(updateRate);
+	SmState_Bot0 = STATE_OBSERVE;
 }
 void Sm_MOVETOPUNISH(void)
 {

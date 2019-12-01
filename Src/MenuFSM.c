@@ -32,7 +32,7 @@ void Sm_PowerOn(void)
 	print_figura_seguro(&p, &xablauSoft);
 	//pontos_t p = {5,5,10,10,15,15};
 	//print_figura_seguro(&p, &fig1);
-	osDelay(100);
+	osDelay(1000);
 	deleta_figura_seguro(&p, &xablauSoft);
 	SmState_Menu = STATE_Menu;
 }
@@ -50,13 +50,23 @@ void Sm_Menu1P(void)
 	print_figura_seguro(&p, &cursor);
 	if(SmState_Int1==STATE_ATKPressed_Int1)
 	{
-		round_count = 0;
-		round_countP1 = 0;
-		round_countP2 = 0;
-		deleta_figura_seguro(&pmenu, &mainMenu);
-		deleta_figura_seguro(&p, &cursor);
-		SmState_Menu = STATE_Arena1P_RoundStart;
-		SmState_Bot1 = STATE_OBSERVE;
+		if(SmState_Bot0 != STATE_OFFLINE)
+		{
+			SmState_Bot0  = STATE_OFFLINE;
+			SmState_Int1 = STATE_NeutralPressed_Int1;
+			return; /// Bot invadiu, sai demonio
+		}
+		else
+		{
+			round_count = 0;
+			round_countP1 = 0;
+			round_countP2 = 0;
+			deleta_figura_seguro(&pmenu, &mainMenu);
+			deleta_figura_seguro(&p, &cursor);
+			SmState_Menu = STATE_Arena1P_RoundStart;
+			SmState_Bot1 = STATE_OBSERVE;
+		}
+
 	}
 	if(SmState_Int1==STATE_RightPressed_Int1)
 	{
@@ -79,6 +89,7 @@ void Sm_Menu2P(void)
 		deleta_figura_seguro(&p, &cursor);
 		deleta_figura_seguro(&pmenu, &mainMenu);
 		SmState_Bot1 = STATE_OBSERVE;
+		SmState_Bot0 = STATE_OBSERVE;
 		SmState_Menu = STATE_Arena2P_RoundStart;
 	}
 	if(SmState_Int1==STATE_LeftPressed_Int1)
@@ -244,17 +255,31 @@ void Sm_Arena2P_RoundStart(void)
 
 void Sm_Arena2P_ONGOING(void)
 {
-	if(SmState_P1 == STATE_PLAYER_Dead)
+	SmState_Menu = STATE_Arena2P_ONGOING;
+	osDelay(1);
+	if(SmState_P2 == STATE_PLAYER_Dead)
 	{
 		osDelay(300);
 		round_count++;
 		round_countP1++;
-		SmState_Menu = STATE_Arena2P_RoundStart;
+		print_rounds();
+		if(round_countP1<3)
+			SmState_Menu = STATE_Arena2P_RoundStart;
+		else
+			SmState_Menu = STATE_GameOver;
 	}
-	/*print_seguro(10,3,"             ");
-	print_seguro(6,3,"2P GAME ON");*/
-	/*if(SmState_Int1==STATE_RightPressed_Int1)
-			SmState_Menu = STATE_GameOver;*/
+
+	if(SmState_P1 == STATE_PLAYER_Dead)
+	{
+		osDelay(300);
+		round_count++;
+		round_countP2++;
+		print_rounds();
+		if(round_countP2<3)
+			SmState_Menu = STATE_Arena2P_RoundStart;
+		else
+			SmState_Menu = STATE_GameOver;
+	}
 }
 
 
@@ -263,10 +288,14 @@ void Sm_GameOver(void)
 {
 	SmState_P1 = STATE_PLAYER_CLEAN;
 	SmState_P2 = STATE_PLAYER_CLEAN;
-	print_seguro(10,3,"             ");
-	print_seguro(10,3,"gg ai man");
+	SmState_Bot1 = STATE_OFFLINE;
+	SmState_Bot0 = STATE_OFFLINE;
+
+	print_seguro(10,2,"             ");
+	print_seguro(10,2,"gg ai man");
 
 	osDelay(1000);
+	SmState_Int1 = STATE_Neutral_Int1;
 	SmState_Menu = STATE_Menu;
 }
 

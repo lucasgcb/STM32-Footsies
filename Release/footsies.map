@@ -1030,6 +1030,9 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 Src/Bot.o
  .text.AdicionarNaLista2
                 0x0000000000000000       0x44 Src/Bot.o
+ .text          0x0000000000000000        0x0 Src/Bot0.o
+ .data          0x0000000000000000        0x0 Src/Bot0.o
+ .bss           0x0000000000000000        0x0 Src/Bot0.o
  .text          0x0000000000000000        0x0 Src/Botao1FSM.o
  .data          0x0000000000000000        0x0 Src/Botao1FSM.o
  .bss           0x0000000000000000        0x0 Src/Botao1FSM.o
@@ -1039,8 +1042,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 Src/Interpreter1FSM.o
  .data          0x0000000000000000        0x0 Src/Interpreter1FSM.o
  .bss           0x0000000000000000        0x0 Src/Interpreter1FSM.o
- .text.AdicionarNaLista1
-                0x0000000000000000       0x44 Src/Interpreter1FSM.o
  .text.P1_INTERPRETER
                 0x0000000000000000       0x30 Src/Interpreter1FSM.o
  .data.EdgeSymbol
@@ -1257,6 +1258,7 @@ LOAD Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
 LOAD Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 LOAD Src/ARM_inits.o
 LOAD Src/Bot.o
+LOAD Src/Bot0.o
 LOAD Src/Botao1FSM.o
 LOAD Src/Detector.o
 LOAD Src/Interpreter1FSM.o
@@ -1311,7 +1313,7 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000000                g_pfnVectors
                 0x000000000800010c                . = ALIGN (0x4)
 
-.text           0x0000000008000110     0x5aa0
+.text           0x0000000008000110     0x5d44
                 0x0000000008000110                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008000110       0x40 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
@@ -1565,657 +1567,696 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .text.Sm_APPROACH
                 0x0000000008002ff4       0x20 Src/Bot.o
                 0x0000000008002ff4                Sm_APPROACH
- .text.Sm_DEFEND
-                0x0000000008003014       0x20 Src/Bot.o
-                0x0000000008003014                Sm_DEFEND
- .text.Sm_BAIT  0x0000000008003034        0x8 Src/Bot.o
-                0x0000000008003034                Sm_BAIT
  .text.Sm_RETREAT
-                0x000000000800303c        0x8 Src/Bot.o
-                0x000000000800303c                Sm_RETREAT
+                0x0000000008003014       0x20 Src/Bot.o
+                0x0000000008003014                Sm_RETREAT
+ .text.Sm_DEFEND
+                0x0000000008003034       0x20 Src/Bot.o
+                0x0000000008003034                Sm_DEFEND
+ .text.Sm_BAIT  0x0000000008003054        0x8 Src/Bot.o
+                0x0000000008003054                Sm_BAIT
  .text.Sm_MOVETOPUNISH
-                0x0000000008003044       0x20 Src/Bot.o
-                0x0000000008003044                Sm_MOVETOPUNISH
+                0x000000000800305c       0x20 Src/Bot.o
+                0x000000000800305c                Sm_MOVETOPUNISH
  .text.Sm_ATTACK
-                0x0000000008003064       0x58 Src/Bot.o
-                0x0000000008003064                Sm_ATTACK
+                0x000000000800307c       0x58 Src/Bot.o
+                0x000000000800307c                Sm_ATTACK
  .text.Sm_COMBO
-                0x00000000080030bc       0x88 Src/Bot.o
-                0x00000000080030bc                Sm_COMBO
+                0x00000000080030d4       0x88 Src/Bot.o
+                0x00000000080030d4                Sm_COMBO
  .text.Sm_OBSERVE
-                0x0000000008003144       0x94 Src/Bot.o
-                0x0000000008003144                Sm_OBSERVE
+                0x000000000800315c       0x94 Src/Bot.o
+                0x000000000800315c                Sm_OBSERVE
  .text.lerDoInput2
-                0x00000000080031d8       0x38 Src/Bot.o
-                0x00000000080031d8                lerDoInput2
+                0x00000000080031f0       0x38 Src/Bot.o
+                0x00000000080031f0                lerDoInput2
  .text.Rodar_Maquina_Bot1
-                0x0000000008003210       0x1c Src/Bot.o
-                0x0000000008003210                Rodar_Maquina_Bot1
+                0x0000000008003228       0x1c Src/Bot.o
+                0x0000000008003228                Rodar_Maquina_Bot1
+ .text.Sm_OFFLINE0
+                0x0000000008003244        0x8 Src/Bot0.o
+                0x0000000008003244                Sm_OFFLINE0
+ .text.Sm_APPROACH0
+                0x000000000800324c       0x20 Src/Bot0.o
+                0x000000000800324c                Sm_APPROACH0
+ .text.Sm_RETREAT0
+                0x000000000800326c       0x20 Src/Bot0.o
+                0x000000000800326c                Sm_RETREAT0
+ .text.Sm_ATTACK0
+                0x000000000800328c       0x28 Src/Bot0.o
+                0x000000000800328c                Sm_ATTACK0
+ .text.Sm_COMBO0
+                0x00000000080032b4       0x30 Src/Bot0.o
+                0x00000000080032b4                Sm_COMBO0
+ .text.Sm_OBSERVE0
+                0x00000000080032e4       0xac Src/Bot0.o
+                0x00000000080032e4                Sm_OBSERVE0
+ .text.Sm_BAIT0
+                0x0000000008003390        0x8 Src/Bot0.o
+                0x0000000008003390                Sm_BAIT0
+ .text.Sm_DEFEND0
+                0x0000000008003398       0x20 Src/Bot0.o
+                0x0000000008003398                Sm_DEFEND0
+ .text.Sm_MOVETOPUNISH0
+                0x00000000080033b8       0x20 Src/Bot0.o
+                0x00000000080033b8                Sm_MOVETOPUNISH0
+ .text.Rodar_Maquina_Bot0
+                0x00000000080033d8       0x1c Src/Bot0.o
+                0x00000000080033d8                Rodar_Maquina_Bot0
  .text.Sm_BotaoON
-                0x000000000800322c       0x2c Src/Botao1FSM.o
-                0x000000000800322c                Sm_BotaoON
+                0x00000000080033f4       0x2c Src/Botao1FSM.o
+                0x00000000080033f4                Sm_BotaoON
  .text.Sm_BotaoOFF
-                0x0000000008003258       0x34 Src/Botao1FSM.o
-                0x0000000008003258                Sm_BotaoOFF
+                0x0000000008003420       0x34 Src/Botao1FSM.o
+                0x0000000008003420                Sm_BotaoOFF
  .text.Sm_DEBOUNCE
-                0x000000000800328c       0x64 Src/Botao1FSM.o
-                0x000000000800328c                Sm_DEBOUNCE
+                0x0000000008003454       0x64 Src/Botao1FSM.o
+                0x0000000008003454                Sm_DEBOUNCE
  .text.Rodar_Maquina_Botao1
-                0x00000000080032f0       0x1c Src/Botao1FSM.o
-                0x00000000080032f0                Rodar_Maquina_Botao1
+                0x00000000080034b8       0x1c Src/Botao1FSM.o
+                0x00000000080034b8                Rodar_Maquina_Botao1
  .text.detectarColisao
-                0x000000000800330c       0x38 Src/Detector.o
-                0x000000000800330c                detectarColisao
+                0x00000000080034d4       0x38 Src/Detector.o
+                0x00000000080034d4                detectarColisao
  .text.Sm_ATKPressed_Int1
-                0x0000000008003344       0x30 Src/Interpreter1FSM.o
-                0x0000000008003344                Sm_ATKPressed_Int1
+                0x000000000800350c       0x30 Src/Interpreter1FSM.o
+                0x000000000800350c                Sm_ATKPressed_Int1
  .text.Sm_NeutralPressed_Int1
-                0x0000000008003374       0x44 Src/Interpreter1FSM.o
-                0x0000000008003374                Sm_NeutralPressed_Int1
+                0x000000000800353c       0x44 Src/Interpreter1FSM.o
+                0x000000000800353c                Sm_NeutralPressed_Int1
  .text.Sm_RightPressed_Int1
-                0x00000000080033b8       0x3c Src/Interpreter1FSM.o
-                0x00000000080033b8                Sm_RightPressed_Int1
+                0x0000000008003580       0x3c Src/Interpreter1FSM.o
+                0x0000000008003580                Sm_RightPressed_Int1
  .text.Sm_LeftPressed_Int1
-                0x00000000080033f4       0x44 Src/Interpreter1FSM.o
-                0x00000000080033f4                Sm_LeftPressed_Int1
+                0x00000000080035bc       0x44 Src/Interpreter1FSM.o
+                0x00000000080035bc                Sm_LeftPressed_Int1
  .text.Sm_Right_Int1
-                0x0000000008003438       0x50 Src/Interpreter1FSM.o
-                0x0000000008003438                Sm_Right_Int1
+                0x0000000008003600       0x50 Src/Interpreter1FSM.o
+                0x0000000008003600                Sm_Right_Int1
  .text.Sm_ATK_Int1
-                0x0000000008003488       0x50 Src/Interpreter1FSM.o
-                0x0000000008003488                Sm_ATK_Int1
+                0x0000000008003650       0x50 Src/Interpreter1FSM.o
+                0x0000000008003650                Sm_ATK_Int1
  .text.Sm_Left_Int1
-                0x00000000080034d8       0x50 Src/Interpreter1FSM.o
-                0x00000000080034d8                Sm_Left_Int1
+                0x00000000080036a0       0x50 Src/Interpreter1FSM.o
+                0x00000000080036a0                Sm_Left_Int1
  .text.Sm_Neutral_Int1
-                0x0000000008003528       0x50 Src/Interpreter1FSM.o
-                0x0000000008003528                Sm_Neutral_Int1
+                0x00000000080036f0       0x50 Src/Interpreter1FSM.o
+                0x00000000080036f0                Sm_Neutral_Int1
  .text.Sm_Edge_Int1
-                0x0000000008003578       0x34 Src/Interpreter1FSM.o
-                0x0000000008003578                Sm_Edge_Int1
+                0x0000000008003740       0x34 Src/Interpreter1FSM.o
+                0x0000000008003740                Sm_Edge_Int1
  .text.Sm_DEBOUNCE_Int1
-                0x00000000080035ac       0xd0 Src/Interpreter1FSM.o
-                0x00000000080035ac                Sm_DEBOUNCE_Int1
+                0x0000000008003774       0xd0 Src/Interpreter1FSM.o
+                0x0000000008003774                Sm_DEBOUNCE_Int1
+ .text.AdicionarNaLista1
+                0x0000000008003844       0x44 Src/Interpreter1FSM.o
+                0x0000000008003844                AdicionarNaLista1
  .text.lerDoInput1
-                0x000000000800367c       0x38 Src/Interpreter1FSM.o
-                0x000000000800367c                lerDoInput1
+                0x0000000008003888       0x38 Src/Interpreter1FSM.o
+                0x0000000008003888                lerDoInput1
  .text.Rodar_Maquina_Interpretador
-                0x00000000080036b4       0x38 Src/Interpreter1FSM.o
-                0x00000000080036b4                Rodar_Maquina_Interpretador
- .text.Sm_Menu  0x00000000080036ec       0x30 Src/MenuFSM.o
-                0x00000000080036ec                Sm_Menu
+                0x00000000080038c0       0x48 Src/Interpreter1FSM.o
+                0x00000000080038c0                Rodar_Maquina_Interpretador
+ .text.Sm_Menu  0x0000000008003908       0x30 Src/MenuFSM.o
+                0x0000000008003908                Sm_Menu
  .text.Sm_PowerOn
-                0x000000000800371c       0x40 Src/MenuFSM.o
-                0x000000000800371c                Sm_PowerOn
+                0x0000000008003938       0x40 Src/MenuFSM.o
+                0x0000000008003938                Sm_PowerOn
  .text.Sm_Menu1P
-                0x000000000800375c       0x9c Src/MenuFSM.o
-                0x000000000800375c                Sm_Menu1P
+                0x0000000008003978       0xb0 Src/MenuFSM.o
+                0x0000000008003978                Sm_Menu1P
  .text.Sm_Menu2P
-                0x00000000080037f8       0x9c Src/MenuFSM.o
-                0x00000000080037f8                Sm_Menu2P
+                0x0000000008003a28       0xa4 Src/MenuFSM.o
+                0x0000000008003a28                Sm_Menu2P
  .text.Sm_GameOver
-                0x0000000008003894       0x44 Src/MenuFSM.o
-                0x0000000008003894                Sm_GameOver
- .text.Sm_Arena2P_ONGOING
-                0x00000000080038d8       0x3c Src/MenuFSM.o
-                0x00000000080038d8                Sm_Arena2P_ONGOING
+                0x0000000008003acc       0x60 Src/MenuFSM.o
+                0x0000000008003acc                Sm_GameOver
  .text.print_rounds
-                0x0000000008003914      0x128 Src/MenuFSM.o
-                0x0000000008003914                print_rounds
+                0x0000000008003b2c      0x128 Src/MenuFSM.o
+                0x0000000008003b2c                print_rounds
  .text.Sm_Arena1P_ONGOING
-                0x0000000008003a3c       0x8c Src/MenuFSM.o
-                0x0000000008003a3c                Sm_Arena1P_ONGOING
+                0x0000000008003c54       0x8c Src/MenuFSM.o
+                0x0000000008003c54                Sm_Arena1P_ONGOING
+ .text.Sm_Arena2P_ONGOING
+                0x0000000008003ce0       0x8c Src/MenuFSM.o
+                0x0000000008003ce0                Sm_Arena2P_ONGOING
  .text.Sm_Arena2P_RoundStart
-                0x0000000008003ac8      0x154 Src/MenuFSM.o
-                0x0000000008003ac8                Sm_Arena2P_RoundStart
+                0x0000000008003d6c      0x154 Src/MenuFSM.o
+                0x0000000008003d6c                Sm_Arena2P_RoundStart
  .text.print_roundstart
-                0x0000000008003c1c      0x138 Src/MenuFSM.o
-                0x0000000008003c1c                print_roundstart
+                0x0000000008003ec0      0x138 Src/MenuFSM.o
+                0x0000000008003ec0                print_roundstart
  .text.Sm_Arena1P_RoundStart
-                0x0000000008003d54      0x13c Src/MenuFSM.o
-                0x0000000008003d54                Sm_Arena1P_RoundStart
+                0x0000000008003ff8      0x13c Src/MenuFSM.o
+                0x0000000008003ff8                Sm_Arena1P_RoundStart
  .text.Rodar_Maquina_Menu
-                0x0000000008003e90       0x28 Src/MenuFSM.o
-                0x0000000008003e90                Rodar_Maquina_Menu
+                0x0000000008004134       0x28 Src/MenuFSM.o
+                0x0000000008004134                Rodar_Maquina_Menu
  .text.inic_LCD
-                0x0000000008003eb8      0x270 Src/NOKIA5110_fb.o
-                0x0000000008003eb8                inic_LCD
+                0x000000000800415c      0x270 Src/NOKIA5110_fb.o
+                0x000000000800415c                inic_LCD
  .text.imprime_LCD
-                0x0000000008004128       0x84 Src/NOKIA5110_fb.o
-                0x0000000008004128                imprime_LCD
+                0x00000000080043cc       0x84 Src/NOKIA5110_fb.o
+                0x00000000080043cc                imprime_LCD
  .text.print_seguro
-                0x00000000080041ac       0xa4 Src/NOKIA5110_fb.o
-                0x00000000080041ac                print_seguro
+                0x0000000008004450       0xa4 Src/NOKIA5110_fb.o
+                0x0000000008004450                print_seguro
  .text.limpa_LCD
-                0x0000000008004250       0xa0 Src/NOKIA5110_fb.o
-                0x0000000008004250                limpa_LCD
+                0x00000000080044f4       0xa0 Src/NOKIA5110_fb.o
+                0x00000000080044f4                limpa_LCD
  .text.deleta_fig
-                0x00000000080042f0      0x12c Src/NOKIA5110_fb.o
-                0x00000000080042f0                deleta_fig
+                0x0000000008004594      0x12c Src/NOKIA5110_fb.o
+                0x0000000008004594                deleta_fig
  .text.deleta_figura_seguro
-                0x000000000800441c       0x34 Src/NOKIA5110_fb.o
-                0x000000000800441c                deleta_figura_seguro
+                0x00000000080046c0       0x34 Src/NOKIA5110_fb.o
+                0x00000000080046c0                deleta_figura_seguro
  .text.deleta_fig_invertido
-                0x0000000008004450      0x12c Src/NOKIA5110_fb.o
-                0x0000000008004450                deleta_fig_invertido
+                0x00000000080046f4      0x12c Src/NOKIA5110_fb.o
+                0x00000000080046f4                deleta_fig_invertido
  .text.deleta_figura_invertido_seguro
-                0x000000000800457c       0x34 Src/NOKIA5110_fb.o
-                0x000000000800457c                deleta_figura_invertido_seguro
+                0x0000000008004820       0x34 Src/NOKIA5110_fb.o
+                0x0000000008004820                deleta_figura_invertido_seguro
  .text.desenha_fig
-                0x00000000080045b0      0x1bc Src/NOKIA5110_fb.o
-                0x00000000080045b0                desenha_fig
+                0x0000000008004854      0x1bc Src/NOKIA5110_fb.o
+                0x0000000008004854                desenha_fig
  .text.print_figura_seguro
-                0x000000000800476c       0x34 Src/NOKIA5110_fb.o
-                0x000000000800476c                print_figura_seguro
+                0x0000000008004a10       0x34 Src/NOKIA5110_fb.o
+                0x0000000008004a10                print_figura_seguro
  .text.desenha_fig_invertido
-                0x00000000080047a0      0x1d4 Src/NOKIA5110_fb.o
-                0x00000000080047a0                desenha_fig_invertido
+                0x0000000008004a44      0x1d4 Src/NOKIA5110_fb.o
+                0x0000000008004a44                desenha_fig_invertido
  .text.print_figura_invertido_seguro
-                0x0000000008004974       0x34 Src/NOKIA5110_fb.o
-                0x0000000008004974                print_figura_invertido_seguro
+                0x0000000008004c18       0x34 Src/NOKIA5110_fb.o
+                0x0000000008004c18                print_figura_invertido_seguro
  .text.Sm_P1_CLEAN
-                0x00000000080049a8        0x4 Src/P1_FSM.o
-                0x00000000080049a8                Sm_P1_CLEAN
+                0x0000000008004c4c        0x4 Src/P1_FSM.o
+                0x0000000008004c4c                Sm_P1_CLEAN
  .text.Sm_P1_MENU
-                0x00000000080049ac       0x24 Src/P1_FSM.o
-                0x00000000080049ac                Sm_P1_MENU
+                0x0000000008004c50       0x24 Src/P1_FSM.o
+                0x0000000008004c50                Sm_P1_MENU
  .text.Sm_P1_RoundStart
-                0x00000000080049d0       0x24 Src/P1_FSM.o
-                0x00000000080049d0                Sm_P1_RoundStart
+                0x0000000008004c74       0x24 Src/P1_FSM.o
+                0x0000000008004c74                Sm_P1_RoundStart
  .text.Sm_P1_Dead
-                0x00000000080049f4        0xc Src/P1_FSM.o
-                0x00000000080049f4                Sm_P1_Dead
+                0x0000000008004c98        0xc Src/P1_FSM.o
+                0x0000000008004c98                Sm_P1_Dead
  .text.Sm_P1_ATK1
-                0x0000000008004a00       0x1c Src/P1_FSM.o
-                0x0000000008004a00                Sm_P1_ATK1
+                0x0000000008004ca4       0x1c Src/P1_FSM.o
+                0x0000000008004ca4                Sm_P1_ATK1
  .text.Sm_P1_ATK2
-                0x0000000008004a1c       0x1c Src/P1_FSM.o
-                0x0000000008004a1c                Sm_P1_ATK2
+                0x0000000008004cc0       0x1c Src/P1_FSM.o
+                0x0000000008004cc0                Sm_P1_ATK2
  .text.Sm_P1_Hit
-                0x0000000008004a38       0x1c Src/P1_FSM.o
-                0x0000000008004a38                Sm_P1_Hit
+                0x0000000008004cdc       0x1c Src/P1_FSM.o
+                0x0000000008004cdc                Sm_P1_Hit
  .text.Sm_P1_Block
-                0x0000000008004a54       0x14 Src/P1_FSM.o
-                0x0000000008004a54                Sm_P1_Block
+                0x0000000008004cf8       0x14 Src/P1_FSM.o
+                0x0000000008004cf8                Sm_P1_Block
  .text.Sm_P1_Dying
-                0x0000000008004a68       0x18 Src/P1_FSM.o
-                0x0000000008004a68                Sm_P1_Dying
+                0x0000000008004d0c       0x18 Src/P1_FSM.o
+                0x0000000008004d0c                Sm_P1_Dying
  .text.Sm_P1_Idle
-                0x0000000008004a80       0x44 Src/P1_FSM.o
-                0x0000000008004a80                Sm_P1_Idle
+                0x0000000008004d24       0x44 Src/P1_FSM.o
+                0x0000000008004d24                Sm_P1_Idle
  .text.Sm_P1_Idle_Recover
-                0x0000000008004ac4       0x44 Src/P1_FSM.o
-                0x0000000008004ac4                Sm_P1_Idle_Recover
+                0x0000000008004d68       0x44 Src/P1_FSM.o
+                0x0000000008004d68                Sm_P1_Idle_Recover
  .text.Sm_P1_Forward
-                0x0000000008004b08       0x54 Src/P1_FSM.o
-                0x0000000008004b08                Sm_P1_Forward
+                0x0000000008004dac       0x54 Src/P1_FSM.o
+                0x0000000008004dac                Sm_P1_Forward
  .text.Sm_P1_Back
-                0x0000000008004b5c       0x54 Src/P1_FSM.o
-                0x0000000008004b5c                Sm_P1_Back
+                0x0000000008004e00       0x54 Src/P1_FSM.o
+                0x0000000008004e00                Sm_P1_Back
  .text.Sm_P1_DashBack
-                0x0000000008004bb0       0x44 Src/P1_FSM.o
-                0x0000000008004bb0                Sm_P1_DashBack
+                0x0000000008004e54       0x44 Src/P1_FSM.o
+                0x0000000008004e54                Sm_P1_DashBack
  .text.Sm_P1_ATK1_Recover
-                0x0000000008004bf4       0x50 Src/P1_FSM.o
-                0x0000000008004bf4                Sm_P1_ATK1_Recover
+                0x0000000008004e98       0x50 Src/P1_FSM.o
+                0x0000000008004e98                Sm_P1_ATK1_Recover
  .text.Sm_P1_ATK2_Recover
-                0x0000000008004c44       0x38 Src/P1_FSM.o
-                0x0000000008004c44                Sm_P1_ATK2_Recover
+                0x0000000008004ee8       0x38 Src/P1_FSM.o
+                0x0000000008004ee8                Sm_P1_ATK2_Recover
  .text.Sm_P1_DashForward
-                0x0000000008004c7c       0x3c Src/P1_FSM.o
-                0x0000000008004c7c                Sm_P1_DashForward
+                0x0000000008004f20       0x3c Src/P1_FSM.o
+                0x0000000008004f20                Sm_P1_DashForward
  .text.Rodar_Maquina_P1
-                0x0000000008004cb8       0x1c Src/P1_FSM.o
-                0x0000000008004cb8                Rodar_Maquina_P1
+                0x0000000008004f5c       0x1c Src/P1_FSM.o
+                0x0000000008004f5c                Rodar_Maquina_P1
  .text.Sm_P1View_CLEAN
-                0x0000000008004cd4       0x24 Src/P1_ViewFSM.o
-                0x0000000008004cd4                Sm_P1View_CLEAN
+                0x0000000008004f78       0x24 Src/P1_ViewFSM.o
+                0x0000000008004f78                Sm_P1View_CLEAN
  .text.Sm_P1View_MENU
-                0x0000000008004cf8        0x8 Src/P1_ViewFSM.o
-                0x0000000008004cf8                Sm_P1View_MENU
+                0x0000000008004f9c        0x8 Src/P1_ViewFSM.o
+                0x0000000008004f9c                Sm_P1View_MENU
  .text.Sm_P1View_RoundStart
-                0x0000000008004d00       0x34 Src/P1_ViewFSM.o
-                0x0000000008004d00                Sm_P1View_RoundStart
+                0x0000000008004fa4       0x34 Src/P1_ViewFSM.o
+                0x0000000008004fa4                Sm_P1View_RoundStart
  .text.Sm_P1View_Idle
-                0x0000000008004d34       0x1c Src/P1_ViewFSM.o
-                0x0000000008004d34                Sm_P1View_Idle
+                0x0000000008004fd8       0x1c Src/P1_ViewFSM.o
+                0x0000000008004fd8                Sm_P1View_Idle
  .text.Sm_P1View_Forward
-                0x0000000008004d50       0x3c Src/P1_ViewFSM.o
-                0x0000000008004d50                Sm_P1View_Forward
+                0x0000000008004ff4       0x3c Src/P1_ViewFSM.o
+                0x0000000008004ff4                Sm_P1View_Forward
  .text.Sm_P1View_DashForward
-                0x0000000008004d8c       0x48 Src/P1_ViewFSM.o
-                0x0000000008004d8c                Sm_P1View_DashForward
+                0x0000000008005030       0x48 Src/P1_ViewFSM.o
+                0x0000000008005030                Sm_P1View_DashForward
  .text.Sm_P1View_DashBack
-                0x0000000008004dd4       0x38 Src/P1_ViewFSM.o
-                0x0000000008004dd4                Sm_P1View_DashBack
+                0x0000000008005078       0x38 Src/P1_ViewFSM.o
+                0x0000000008005078                Sm_P1View_DashBack
  .text.Sm_P1View_Back
-                0x0000000008004e0c       0x34 Src/P1_ViewFSM.o
-                0x0000000008004e0c                Sm_P1View_Back
+                0x00000000080050b0       0x34 Src/P1_ViewFSM.o
+                0x00000000080050b0                Sm_P1View_Back
  .text.Sm_P1View_ATK1
-                0x0000000008004e40       0x54 Src/P1_ViewFSM.o
-                0x0000000008004e40                Sm_P1View_ATK1
+                0x00000000080050e4       0x54 Src/P1_ViewFSM.o
+                0x00000000080050e4                Sm_P1View_ATK1
  .text.Sm_P1View_ATK2
-                0x0000000008004e94       0x4c Src/P1_ViewFSM.o
-                0x0000000008004e94                Sm_P1View_ATK2
+                0x0000000008005138       0x4c Src/P1_ViewFSM.o
+                0x0000000008005138                Sm_P1View_ATK2
  .text.Sm_P1View_ATK2_Recover
-                0x0000000008004ee0       0x2c Src/P1_ViewFSM.o
-                0x0000000008004ee0                Sm_P1View_ATK2_Recover
+                0x0000000008005184       0x2c Src/P1_ViewFSM.o
+                0x0000000008005184                Sm_P1View_ATK2_Recover
  .text.Sm_P1View_ATK1_Recover
-                0x0000000008004f0c       0x2c Src/P1_ViewFSM.o
-                0x0000000008004f0c                Sm_P1View_ATK1_Recover
+                0x00000000080051b0       0x2c Src/P1_ViewFSM.o
+                0x00000000080051b0                Sm_P1View_ATK1_Recover
  .text.Sm_P1View_Hit
-                0x0000000008004f38       0x28 Src/P1_ViewFSM.o
-                0x0000000008004f38                Sm_P1View_Hit
+                0x00000000080051dc       0x28 Src/P1_ViewFSM.o
+                0x00000000080051dc                Sm_P1View_Hit
  .text.Sm_P1View_Block
-                0x0000000008004f60       0x28 Src/P1_ViewFSM.o
-                0x0000000008004f60                Sm_P1View_Block
+                0x0000000008005204       0x28 Src/P1_ViewFSM.o
+                0x0000000008005204                Sm_P1View_Block
  .text.Sm_P1View_Dying
-                0x0000000008004f88       0x2c Src/P1_ViewFSM.o
-                0x0000000008004f88                Sm_P1View_Dying
+                0x000000000800522c       0x2c Src/P1_ViewFSM.o
+                0x000000000800522c                Sm_P1View_Dying
  .text.Sm_P1View_Dead
-                0x0000000008004fb4       0x28 Src/P1_ViewFSM.o
-                0x0000000008004fb4                Sm_P1View_Dead
+                0x0000000008005258       0x28 Src/P1_ViewFSM.o
+                0x0000000008005258                Sm_P1View_Dead
  .text.Sm_P1View_Idle_Recover
-                0x0000000008004fdc       0x1c Src/P1_ViewFSM.o
-                0x0000000008004fdc                Sm_P1View_Idle_Recover
+                0x0000000008005280       0x1c Src/P1_ViewFSM.o
+                0x0000000008005280                Sm_P1View_Idle_Recover
  .text.Rodar_Maquina_P1View
-                0x0000000008004ff8       0x1c Src/P1_ViewFSM.o
-                0x0000000008004ff8                Rodar_Maquina_P1View
+                0x000000000800529c       0x1c Src/P1_ViewFSM.o
+                0x000000000800529c                Rodar_Maquina_P1View
  .text.Sm_P2_MENU
-                0x0000000008005014       0x24 Src/P2_FSM.o
-                0x0000000008005014                Sm_P2_MENU
+                0x00000000080052b8       0x24 Src/P2_FSM.o
+                0x00000000080052b8                Sm_P2_MENU
  .text.Sm_P2_RoundStart
-                0x0000000008005038       0x24 Src/P2_FSM.o
-                0x0000000008005038                Sm_P2_RoundStart
+                0x00000000080052dc       0x24 Src/P2_FSM.o
+                0x00000000080052dc                Sm_P2_RoundStart
  .text.Sm_P2_Dead
-                0x000000000800505c        0xc Src/P2_FSM.o
-                0x000000000800505c                Sm_P2_Dead
+                0x0000000008005300        0xc Src/P2_FSM.o
+                0x0000000008005300                Sm_P2_Dead
  .text.Sm_P2_CLEAN
-                0x0000000008005068        0x8 Src/P2_FSM.o
-                0x0000000008005068                Sm_P2_CLEAN
+                0x000000000800530c        0x8 Src/P2_FSM.o
+                0x000000000800530c                Sm_P2_CLEAN
  .text.Sm_P2_DashForward
-                0x0000000008005070       0x38 Src/P2_FSM.o
-                0x0000000008005070                Sm_P2_DashForward
+                0x0000000008005314       0x38 Src/P2_FSM.o
+                0x0000000008005314                Sm_P2_DashForward
  .text.Sm_P2_DashBack
-                0x00000000080050a8       0x44 Src/P2_FSM.o
-                0x00000000080050a8                Sm_P2_DashBack
+                0x000000000800534c       0x44 Src/P2_FSM.o
+                0x000000000800534c                Sm_P2_DashBack
  .text.Sm_P2_ATK1
-                0x00000000080050ec       0x1c Src/P2_FSM.o
-                0x00000000080050ec                Sm_P2_ATK1
+                0x0000000008005390       0x1c Src/P2_FSM.o
+                0x0000000008005390                Sm_P2_ATK1
  .text.Sm_P2_ATK2
-                0x0000000008005108       0x1c Src/P2_FSM.o
-                0x0000000008005108                Sm_P2_ATK2
+                0x00000000080053ac       0x1c Src/P2_FSM.o
+                0x00000000080053ac                Sm_P2_ATK2
  .text.Sm_P2_Hit
-                0x0000000008005124       0x1c Src/P2_FSM.o
-                0x0000000008005124                Sm_P2_Hit
+                0x00000000080053c8       0x1c Src/P2_FSM.o
+                0x00000000080053c8                Sm_P2_Hit
  .text.Sm_P2_Block
-                0x0000000008005140       0x14 Src/P2_FSM.o
-                0x0000000008005140                Sm_P2_Block
+                0x00000000080053e4       0x14 Src/P2_FSM.o
+                0x00000000080053e4                Sm_P2_Block
  .text.Sm_P2_Dying
-                0x0000000008005154       0x18 Src/P2_FSM.o
-                0x0000000008005154                Sm_P2_Dying
+                0x00000000080053f8       0x18 Src/P2_FSM.o
+                0x00000000080053f8                Sm_P2_Dying
  .text.Sm_P2_Forward
-                0x000000000800516c       0x4c Src/P2_FSM.o
-                0x000000000800516c                Sm_P2_Forward
+                0x0000000008005410       0x4c Src/P2_FSM.o
+                0x0000000008005410                Sm_P2_Forward
  .text.Sm_P2_Back
-                0x00000000080051b8       0x4c Src/P2_FSM.o
-                0x00000000080051b8                Sm_P2_Back
+                0x000000000800545c       0x4c Src/P2_FSM.o
+                0x000000000800545c                Sm_P2_Back
  .text.Sm_P2_Idle
-                0x0000000008005204       0x44 Src/P2_FSM.o
-                0x0000000008005204                Sm_P2_Idle
+                0x00000000080054a8       0x44 Src/P2_FSM.o
+                0x00000000080054a8                Sm_P2_Idle
  .text.Sm_P2_Idle_Recover
-                0x0000000008005248       0x44 Src/P2_FSM.o
-                0x0000000008005248                Sm_P2_Idle_Recover
+                0x00000000080054ec       0x44 Src/P2_FSM.o
+                0x00000000080054ec                Sm_P2_Idle_Recover
  .text.Sm_P2_ATK1_Recover
-                0x000000000800528c       0x50 Src/P2_FSM.o
-                0x000000000800528c                Sm_P2_ATK1_Recover
+                0x0000000008005530       0x50 Src/P2_FSM.o
+                0x0000000008005530                Sm_P2_ATK1_Recover
  .text.Sm_P2_ATK2_Recover
-                0x00000000080052dc       0x38 Src/P2_FSM.o
-                0x00000000080052dc                Sm_P2_ATK2_Recover
+                0x0000000008005580       0x38 Src/P2_FSM.o
+                0x0000000008005580                Sm_P2_ATK2_Recover
  .text.Rodar_Maquina_P2
-                0x0000000008005314       0x1c Src/P2_FSM.o
-                0x0000000008005314                Rodar_Maquina_P2
+                0x00000000080055b8       0x1c Src/P2_FSM.o
+                0x00000000080055b8                Rodar_Maquina_P2
  .text.Sm_P2View_CLEAN
-                0x0000000008005330       0x24 Src/P2_ViewFSM.o
-                0x0000000008005330                Sm_P2View_CLEAN
+                0x00000000080055d4       0x24 Src/P2_ViewFSM.o
+                0x00000000080055d4                Sm_P2View_CLEAN
  .text.Sm_P2View_MENU
-                0x0000000008005354        0x8 Src/P2_ViewFSM.o
-                0x0000000008005354                Sm_P2View_MENU
+                0x00000000080055f8        0x8 Src/P2_ViewFSM.o
+                0x00000000080055f8                Sm_P2View_MENU
  .text.Sm_P2View_RoundStart
-                0x000000000800535c       0x34 Src/P2_ViewFSM.o
-                0x000000000800535c                Sm_P2View_RoundStart
+                0x0000000008005600       0x34 Src/P2_ViewFSM.o
+                0x0000000008005600                Sm_P2View_RoundStart
  .text.Sm_P2View_Idle
-                0x0000000008005390       0x1c Src/P2_ViewFSM.o
-                0x0000000008005390                Sm_P2View_Idle
+                0x0000000008005634       0x1c Src/P2_ViewFSM.o
+                0x0000000008005634                Sm_P2View_Idle
  .text.Sm_P2View_Forward
-                0x00000000080053ac       0x3c Src/P2_ViewFSM.o
-                0x00000000080053ac                Sm_P2View_Forward
+                0x0000000008005650       0x3c Src/P2_ViewFSM.o
+                0x0000000008005650                Sm_P2View_Forward
  .text.Sm_P2View_DashForward
-                0x00000000080053e8       0x48 Src/P2_ViewFSM.o
-                0x00000000080053e8                Sm_P2View_DashForward
+                0x000000000800568c       0x48 Src/P2_ViewFSM.o
+                0x000000000800568c                Sm_P2View_DashForward
  .text.Sm_P2View_DashBack
-                0x0000000008005430       0x38 Src/P2_ViewFSM.o
-                0x0000000008005430                Sm_P2View_DashBack
+                0x00000000080056d4       0x38 Src/P2_ViewFSM.o
+                0x00000000080056d4                Sm_P2View_DashBack
  .text.Sm_P2View_Back
-                0x0000000008005468       0x34 Src/P2_ViewFSM.o
-                0x0000000008005468                Sm_P2View_Back
+                0x000000000800570c       0x34 Src/P2_ViewFSM.o
+                0x000000000800570c                Sm_P2View_Back
  .text.Sm_P2View_ATK1
-                0x000000000800549c       0x54 Src/P2_ViewFSM.o
-                0x000000000800549c                Sm_P2View_ATK1
+                0x0000000008005740       0x54 Src/P2_ViewFSM.o
+                0x0000000008005740                Sm_P2View_ATK1
  .text.Sm_P2View_ATK2
-                0x00000000080054f0       0x4c Src/P2_ViewFSM.o
-                0x00000000080054f0                Sm_P2View_ATK2
+                0x0000000008005794       0x4c Src/P2_ViewFSM.o
+                0x0000000008005794                Sm_P2View_ATK2
  .text.Sm_P2View_ATK2_Recover
-                0x000000000800553c       0x2c Src/P2_ViewFSM.o
-                0x000000000800553c                Sm_P2View_ATK2_Recover
+                0x00000000080057e0       0x2c Src/P2_ViewFSM.o
+                0x00000000080057e0                Sm_P2View_ATK2_Recover
  .text.Sm_P2View_ATK1_Recover
-                0x0000000008005568       0x2c Src/P2_ViewFSM.o
-                0x0000000008005568                Sm_P2View_ATK1_Recover
+                0x000000000800580c       0x2c Src/P2_ViewFSM.o
+                0x000000000800580c                Sm_P2View_ATK1_Recover
  .text.Sm_P2View_Hit
-                0x0000000008005594       0x28 Src/P2_ViewFSM.o
-                0x0000000008005594                Sm_P2View_Hit
+                0x0000000008005838       0x28 Src/P2_ViewFSM.o
+                0x0000000008005838                Sm_P2View_Hit
  .text.Sm_P2View_Block
-                0x00000000080055bc       0x28 Src/P2_ViewFSM.o
-                0x00000000080055bc                Sm_P2View_Block
+                0x0000000008005860       0x28 Src/P2_ViewFSM.o
+                0x0000000008005860                Sm_P2View_Block
  .text.Sm_P2View_Dying
-                0x00000000080055e4       0x2c Src/P2_ViewFSM.o
-                0x00000000080055e4                Sm_P2View_Dying
+                0x0000000008005888       0x2c Src/P2_ViewFSM.o
+                0x0000000008005888                Sm_P2View_Dying
  .text.Sm_P2View_Dead
-                0x0000000008005610       0x28 Src/P2_ViewFSM.o
-                0x0000000008005610                Sm_P2View_Dead
+                0x00000000080058b4       0x28 Src/P2_ViewFSM.o
+                0x00000000080058b4                Sm_P2View_Dead
  .text.Sm_P2View_Idle_Recover
-                0x0000000008005638       0x1c Src/P2_ViewFSM.o
-                0x0000000008005638                Sm_P2View_Idle_Recover
+                0x00000000080058dc       0x1c Src/P2_ViewFSM.o
+                0x00000000080058dc                Sm_P2View_Idle_Recover
  .text.Rodar_Maquina_P2View
-                0x0000000008005654       0x1c Src/P2_ViewFSM.o
-                0x0000000008005654                Rodar_Maquina_P2View
+                0x00000000080058f8       0x1c Src/P2_ViewFSM.o
+                0x00000000080058f8                Rodar_Maquina_P2View
  .text.atraso_us
-                0x0000000008005670       0x10 Src/delay.o
-                0x0000000008005670                atraso_us
- .text.Bot1     0x0000000008005680       0x2c Src/main.o
-                0x0000000008005680                Bot1
- .text.P2       0x00000000080056ac       0x10 Src/main.o
-                0x00000000080056ac                P2
- .text.P2View   0x00000000080056bc        0x8 Src/main.o
-                0x00000000080056bc                P2View
- .text.P1       0x00000000080056c4       0x10 Src/main.o
-                0x00000000080056c4                P1
- .text.P1View   0x00000000080056d4        0x8 Src/main.o
-                0x00000000080056d4                P1View
- .text.Menu     0x00000000080056dc        0x8 Src/main.o
-                0x00000000080056dc                Menu
+                0x0000000008005914       0x10 Src/delay.o
+                0x0000000008005914                atraso_us
+ .text.Bot1     0x0000000008005924       0x2c Src/main.o
+                0x0000000008005924                Bot1
+ .text.P2       0x0000000008005950       0x10 Src/main.o
+                0x0000000008005950                P2
+ .text.P2View   0x0000000008005960        0x8 Src/main.o
+                0x0000000008005960                P2View
+ .text.P1       0x0000000008005968       0x10 Src/main.o
+                0x0000000008005968                P1
+ .text.P1View   0x0000000008005978        0x8 Src/main.o
+                0x0000000008005978                P1View
+ .text.Menu     0x0000000008005980        0x8 Src/main.o
+                0x0000000008005980                Menu
  .text.InputInterpreter
-                0x00000000080056e4       0x24 Src/main.o
-                0x00000000080056e4                InputInterpreter
+                0x0000000008005988       0x24 Src/main.o
+                0x0000000008005988                InputInterpreter
  .text.StartDefaultTask
-                0x0000000008005708       0x38 Src/main.o
-                0x0000000008005708                StartDefaultTask
+                0x00000000080059ac       0x38 Src/main.o
+                0x00000000080059ac                StartDefaultTask
  .text.ObservaBotao
-                0x0000000008005740        0x8 Src/main.o
-                0x0000000008005740                ObservaBotao
+                0x00000000080059e4        0x8 Src/main.o
+                0x00000000080059e4                ObservaBotao
  .text.startup.main
-                0x0000000008005748      0x168 Src/main.o
-                0x0000000008005748                main
+                0x00000000080059ec      0x168 Src/main.o
+                0x00000000080059ec                main
  .text.HAL_MspInit
-                0x00000000080058b0       0x50 Src/stm32f1xx_hal_msp.o
-                0x00000000080058b0                HAL_MspInit
+                0x0000000008005b54       0x50 Src/stm32f1xx_hal_msp.o
+                0x0000000008005b54                HAL_MspInit
  .text.HAL_ADC_MspInit
-                0x0000000008005900       0xac Src/stm32f1xx_hal_msp.o
-                0x0000000008005900                HAL_ADC_MspInit
+                0x0000000008005ba4       0xac Src/stm32f1xx_hal_msp.o
+                0x0000000008005ba4                HAL_ADC_MspInit
  .text.HAL_RTC_MspInit
-                0x00000000080059ac       0x40 Src/stm32f1xx_hal_msp.o
-                0x00000000080059ac                HAL_RTC_MspInit
+                0x0000000008005c50       0x40 Src/stm32f1xx_hal_msp.o
+                0x0000000008005c50                HAL_RTC_MspInit
  .text.HAL_InitTick
-                0x00000000080059ec       0x7c Src/stm32f1xx_hal_timebase_tim.o
-                0x00000000080059ec                HAL_InitTick
+                0x0000000008005c90       0x7c Src/stm32f1xx_hal_timebase_tim.o
+                0x0000000008005c90                HAL_InitTick
  .text.NMI_Handler
-                0x0000000008005a68        0x4 Src/stm32f1xx_it.o
-                0x0000000008005a68                NMI_Handler
+                0x0000000008005d0c        0x4 Src/stm32f1xx_it.o
+                0x0000000008005d0c                NMI_Handler
  .text.HardFault_Handler
-                0x0000000008005a6c        0x4 Src/stm32f1xx_it.o
-                0x0000000008005a6c                HardFault_Handler
+                0x0000000008005d10        0x4 Src/stm32f1xx_it.o
+                0x0000000008005d10                HardFault_Handler
  .text.MemManage_Handler
-                0x0000000008005a70        0x4 Src/stm32f1xx_it.o
-                0x0000000008005a70                MemManage_Handler
+                0x0000000008005d14        0x4 Src/stm32f1xx_it.o
+                0x0000000008005d14                MemManage_Handler
  .text.BusFault_Handler
-                0x0000000008005a74        0x4 Src/stm32f1xx_it.o
-                0x0000000008005a74                BusFault_Handler
+                0x0000000008005d18        0x4 Src/stm32f1xx_it.o
+                0x0000000008005d18                BusFault_Handler
  .text.UsageFault_Handler
-                0x0000000008005a78        0x4 Src/stm32f1xx_it.o
-                0x0000000008005a78                UsageFault_Handler
+                0x0000000008005d1c        0x4 Src/stm32f1xx_it.o
+                0x0000000008005d1c                UsageFault_Handler
  .text.DebugMon_Handler
-                0x0000000008005a7c        0x4 Src/stm32f1xx_it.o
-                0x0000000008005a7c                DebugMon_Handler
+                0x0000000008005d20        0x4 Src/stm32f1xx_it.o
+                0x0000000008005d20                DebugMon_Handler
  .text.TIM4_IRQHandler
-                0x0000000008005a80        0xc Src/stm32f1xx_it.o
-                0x0000000008005a80                TIM4_IRQHandler
+                0x0000000008005d24        0xc Src/stm32f1xx_it.o
+                0x0000000008005d24                TIM4_IRQHandler
  .text.SystemInit
-                0x0000000008005a8c       0x50 Src/system_stm32f1xx.o
-                0x0000000008005a8c                SystemInit
+                0x0000000008005d30       0x50 Src/system_stm32f1xx.o
+                0x0000000008005d30                SystemInit
  .text.Reset_Handler
-                0x0000000008005adc       0x48 Startup/startup_stm32f103c8tx.o
-                0x0000000008005adc                Reset_Handler
+                0x0000000008005d80       0x48 Startup/startup_stm32f103c8tx.o
+                0x0000000008005d80                Reset_Handler
  .text.Default_Handler
-                0x0000000008005b24        0x2 Startup/startup_stm32f103c8tx.o
-                0x0000000008005b24                RTC_Alarm_IRQHandler
-                0x0000000008005b24                EXTI2_IRQHandler
-                0x0000000008005b24                TIM1_CC_IRQHandler
-                0x0000000008005b24                PVD_IRQHandler
-                0x0000000008005b24                EXTI3_IRQHandler
-                0x0000000008005b24                EXTI0_IRQHandler
-                0x0000000008005b24                I2C2_EV_IRQHandler
-                0x0000000008005b24                ADC1_2_IRQHandler
-                0x0000000008005b24                SPI1_IRQHandler
-                0x0000000008005b24                TAMPER_IRQHandler
-                0x0000000008005b24                DMA1_Channel4_IRQHandler
-                0x0000000008005b24                USART3_IRQHandler
-                0x0000000008005b24                RTC_IRQHandler
-                0x0000000008005b24                DMA1_Channel7_IRQHandler
-                0x0000000008005b24                CAN1_RX1_IRQHandler
-                0x0000000008005b24                I2C1_EV_IRQHandler
-                0x0000000008005b24                DMA1_Channel6_IRQHandler
-                0x0000000008005b24                TIM3_IRQHandler
-                0x0000000008005b24                RCC_IRQHandler
-                0x0000000008005b24                TIM1_TRG_COM_IRQHandler
-                0x0000000008005b24                DMA1_Channel1_IRQHandler
-                0x0000000008005b24                Default_Handler
-                0x0000000008005b24                EXTI15_10_IRQHandler
-                0x0000000008005b24                EXTI9_5_IRQHandler
-                0x0000000008005b24                SPI2_IRQHandler
-                0x0000000008005b24                DMA1_Channel5_IRQHandler
-                0x0000000008005b24                EXTI4_IRQHandler
-                0x0000000008005b24                USB_LP_CAN1_RX0_IRQHandler
-                0x0000000008005b24                USB_HP_CAN1_TX_IRQHandler
-                0x0000000008005b24                DMA1_Channel3_IRQHandler
-                0x0000000008005b24                TIM1_UP_IRQHandler
-                0x0000000008005b24                WWDG_IRQHandler
-                0x0000000008005b24                TIM2_IRQHandler
-                0x0000000008005b24                TIM1_BRK_IRQHandler
-                0x0000000008005b24                EXTI1_IRQHandler
-                0x0000000008005b24                USART2_IRQHandler
-                0x0000000008005b24                I2C2_ER_IRQHandler
-                0x0000000008005b24                DMA1_Channel2_IRQHandler
-                0x0000000008005b24                CAN1_SCE_IRQHandler
-                0x0000000008005b24                FLASH_IRQHandler
-                0x0000000008005b24                USART1_IRQHandler
-                0x0000000008005b24                I2C1_ER_IRQHandler
-                0x0000000008005b24                USBWakeUp_IRQHandler
- *fill*         0x0000000008005b26        0x2 
+                0x0000000008005dc8        0x2 Startup/startup_stm32f103c8tx.o
+                0x0000000008005dc8                RTC_Alarm_IRQHandler
+                0x0000000008005dc8                EXTI2_IRQHandler
+                0x0000000008005dc8                TIM1_CC_IRQHandler
+                0x0000000008005dc8                PVD_IRQHandler
+                0x0000000008005dc8                EXTI3_IRQHandler
+                0x0000000008005dc8                EXTI0_IRQHandler
+                0x0000000008005dc8                I2C2_EV_IRQHandler
+                0x0000000008005dc8                ADC1_2_IRQHandler
+                0x0000000008005dc8                SPI1_IRQHandler
+                0x0000000008005dc8                TAMPER_IRQHandler
+                0x0000000008005dc8                DMA1_Channel4_IRQHandler
+                0x0000000008005dc8                USART3_IRQHandler
+                0x0000000008005dc8                RTC_IRQHandler
+                0x0000000008005dc8                DMA1_Channel7_IRQHandler
+                0x0000000008005dc8                CAN1_RX1_IRQHandler
+                0x0000000008005dc8                I2C1_EV_IRQHandler
+                0x0000000008005dc8                DMA1_Channel6_IRQHandler
+                0x0000000008005dc8                TIM3_IRQHandler
+                0x0000000008005dc8                RCC_IRQHandler
+                0x0000000008005dc8                TIM1_TRG_COM_IRQHandler
+                0x0000000008005dc8                DMA1_Channel1_IRQHandler
+                0x0000000008005dc8                Default_Handler
+                0x0000000008005dc8                EXTI15_10_IRQHandler
+                0x0000000008005dc8                EXTI9_5_IRQHandler
+                0x0000000008005dc8                SPI2_IRQHandler
+                0x0000000008005dc8                DMA1_Channel5_IRQHandler
+                0x0000000008005dc8                EXTI4_IRQHandler
+                0x0000000008005dc8                USB_LP_CAN1_RX0_IRQHandler
+                0x0000000008005dc8                USB_HP_CAN1_TX_IRQHandler
+                0x0000000008005dc8                DMA1_Channel3_IRQHandler
+                0x0000000008005dc8                TIM1_UP_IRQHandler
+                0x0000000008005dc8                WWDG_IRQHandler
+                0x0000000008005dc8                TIM2_IRQHandler
+                0x0000000008005dc8                TIM1_BRK_IRQHandler
+                0x0000000008005dc8                EXTI1_IRQHandler
+                0x0000000008005dc8                USART2_IRQHandler
+                0x0000000008005dc8                I2C2_ER_IRQHandler
+                0x0000000008005dc8                DMA1_Channel2_IRQHandler
+                0x0000000008005dc8                CAN1_SCE_IRQHandler
+                0x0000000008005dc8                FLASH_IRQHandler
+                0x0000000008005dc8                USART1_IRQHandler
+                0x0000000008005dc8                I2C1_ER_IRQHandler
+                0x0000000008005dc8                USBWakeUp_IRQHandler
+ *fill*         0x0000000008005dca        0x2 
  .text.__libc_init_array
-                0x0000000008005b28       0x48 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
-                0x0000000008005b28                __libc_init_array
- .text.memcpy   0x0000000008005b70       0x16 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000008005b70                memcpy
- .text.memset   0x0000000008005b86       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memset.o)
-                0x0000000008005b86                memset
+                0x0000000008005dcc       0x48 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+                0x0000000008005dcc                __libc_init_array
+ .text.memcpy   0x0000000008005e14       0x16 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000008005e14                memcpy
+ .text.memset   0x0000000008005e2a       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memset.o)
+                0x0000000008005e2a                memset
  *(.glue_7)
- .glue_7        0x0000000008005b96        0x0 linker stubs
+ .glue_7        0x0000000008005e3a        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008005b96        0x0 linker stubs
+ .glue_7t       0x0000000008005e3a        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x0000000008005b96        0x2 
- .eh_frame      0x0000000008005b98        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ *fill*         0x0000000008005e3a        0x2 
+ .eh_frame      0x0000000008005e3c        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x0000000008005b98        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x0000000008005b98                _init
- .init          0x0000000008005b9c        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+ .init          0x0000000008005e3c        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x0000000008005e3c                _init
+ .init          0x0000000008005e40        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x0000000008005ba4        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x0000000008005ba4                _fini
- .fini          0x0000000008005ba8        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
-                0x0000000008005bb0                . = ALIGN (0x4)
-                0x0000000008005bb0                _etext = .
+ .fini          0x0000000008005e48        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x0000000008005e48                _fini
+ .fini          0x0000000008005e4c        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x0000000008005e54                . = ALIGN (0x4)
+                0x0000000008005e54                _etext = .
 
-.vfp11_veneer   0x0000000008005bb0        0x0
- .vfp11_veneer  0x0000000008005bb0        0x0 linker stubs
+.vfp11_veneer   0x0000000008005e54        0x0
+ .vfp11_veneer  0x0000000008005e54        0x0 linker stubs
 
-.v4_bx          0x0000000008005bb0        0x0
- .v4_bx         0x0000000008005bb0        0x0 linker stubs
+.v4_bx          0x0000000008005e54        0x0
+ .v4_bx         0x0000000008005e54        0x0 linker stubs
 
-.iplt           0x0000000008005bb0        0x0
- .iplt          0x0000000008005bb0        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.iplt           0x0000000008005e54        0x0
+ .iplt          0x0000000008005e54        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x0000000008005bb0      0x980
-                0x0000000008005bb0                . = ALIGN (0x4)
+.rodata         0x0000000008005e54      0x988
+                0x0000000008005e54                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008005bb0       0x10 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .rodata        0x0000000008005bc0       0x10 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o
- .rodata        0x0000000008005bd0       0x78 Src/MenuFSM.o
- .rodata        0x0000000008005c48       0xb4 Src/main.o
+ .rodata        0x0000000008005e54       0x10 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .rodata        0x0000000008005e64       0x10 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o
+ .rodata        0x0000000008005e74       0x78 Src/MenuFSM.o
+ .rodata        0x0000000008005eec       0xb4 Src/main.o
  *(.rodata*)
+ .rodata.Sm_ATTACK0.str1.4
+                0x0000000008005fa0        0x2 Src/Bot0.o
+ *fill*         0x0000000008005fa2        0x2 
+ .rodata.Sm_OBSERVE0.str1.4
+                0x0000000008005fa4        0x2 Src/Bot0.o
+ *fill*         0x0000000008005fa6        0x2 
  .rodata.Sm_GameOver.str1.4
-                0x0000000008005cfc       0x1a Src/MenuFSM.o
- *fill*         0x0000000008005d16        0x2 
- .rodata.ASCII  0x0000000008005d18      0x1e0 Src/NOKIA5110_fb.o
- .rodata.ATK1   0x0000000008005ef8       0x22 Src/figuras.o
-                0x0000000008005ef8                ATK1
- *fill*         0x0000000008005f1a        0x2 
- .rodata.ATK2   0x0000000008005f1c       0x22 Src/figuras.o
-                0x0000000008005f1c                ATK2
- *fill*         0x0000000008005f3e        0x2 
- .rodata.BRIGUE
-                0x0000000008005f40       0x32 Src/figuras.o
-                0x0000000008005f40                BRIGUE
- *fill*         0x0000000008005f72        0x2 
- .rodata.ROUND  0x0000000008005f74       0x2a Src/figuras.o
-                0x0000000008005f74                ROUND
- *fill*         0x0000000008005f9e        0x2 
- .rodata.block  0x0000000008005fa0       0x22 Src/figuras.o
-                0x0000000008005fa0                block
+                0x0000000008005fa8       0x1a Src/MenuFSM.o
  *fill*         0x0000000008005fc2        0x2 
+ .rodata.ASCII  0x0000000008005fc4      0x1e0 Src/NOKIA5110_fb.o
+ .rodata.ATK1   0x00000000080061a4       0x22 Src/figuras.o
+                0x00000000080061a4                ATK1
+ *fill*         0x00000000080061c6        0x2 
+ .rodata.ATK2   0x00000000080061c8       0x22 Src/figuras.o
+                0x00000000080061c8                ATK2
+ *fill*         0x00000000080061ea        0x2 
+ .rodata.BRIGUE
+                0x00000000080061ec       0x32 Src/figuras.o
+                0x00000000080061ec                BRIGUE
+ *fill*         0x000000000800621e        0x2 
+ .rodata.ROUND  0x0000000008006220       0x2a Src/figuras.o
+                0x0000000008006220                ROUND
+ *fill*         0x000000000800624a        0x2 
+ .rodata.block  0x000000000800624c       0x22 Src/figuras.o
+                0x000000000800624c                block
+ *fill*         0x000000000800626e        0x2 
  .rodata.cursor
-                0x0000000008005fc4        0xa Src/figuras.o
-                0x0000000008005fc4                cursor
- *fill*         0x0000000008005fce        0x2 
+                0x0000000008006270        0xa Src/figuras.o
+                0x0000000008006270                cursor
+ *fill*         0x000000000800627a        0x2 
  .rodata.dashbck
-                0x0000000008005fd0       0x22 Src/figuras.o
-                0x0000000008005fd0                dashbck
- *fill*         0x0000000008005ff2        0x2 
+                0x000000000800627c       0x22 Src/figuras.o
+                0x000000000800627c                dashbck
+ *fill*         0x000000000800629e        0x2 
  .rodata.dashfwd
-                0x0000000008005ff4       0x22 Src/figuras.o
-                0x0000000008005ff4                dashfwd
- *fill*         0x0000000008006016        0x2 
- .rodata.dead   0x0000000008006018       0x22 Src/figuras.o
-                0x0000000008006018                dead
- *fill*         0x000000000800603a        0x2 
- .rodata.dois   0x000000000800603c       0x12 Src/figuras.o
-                0x000000000800603c                dois
- *fill*         0x000000000800604e        0x2 
- .rodata.dying  0x0000000008006050       0x22 Src/figuras.o
-                0x0000000008006050                dying
- *fill*         0x0000000008006072        0x2 
- .rodata.final  0x0000000008006074       0x12 Src/figuras.o
-                0x0000000008006074                final
- *fill*         0x0000000008006086        0x2 
- .rodata.hit    0x0000000008006088       0x22 Src/figuras.o
-                0x0000000008006088                hit
- *fill*         0x00000000080060aa        0x2 
+                0x00000000080062a0       0x22 Src/figuras.o
+                0x00000000080062a0                dashfwd
+ *fill*         0x00000000080062c2        0x2 
+ .rodata.dead   0x00000000080062c4       0x22 Src/figuras.o
+                0x00000000080062c4                dead
+ *fill*         0x00000000080062e6        0x2 
+ .rodata.dois   0x00000000080062e8       0x12 Src/figuras.o
+                0x00000000080062e8                dois
+ *fill*         0x00000000080062fa        0x2 
+ .rodata.dying  0x00000000080062fc       0x22 Src/figuras.o
+                0x00000000080062fc                dying
+ *fill*         0x000000000800631e        0x2 
+ .rodata.final  0x0000000008006320       0x12 Src/figuras.o
+                0x0000000008006320                final
+ *fill*         0x0000000008006332        0x2 
+ .rodata.hit    0x0000000008006334       0x22 Src/figuras.o
+                0x0000000008006334                hit
+ *fill*         0x0000000008006356        0x2 
  .rodata.mainMenu
-                0x00000000080060ac      0x1e2 Src/figuras.o
-                0x00000000080060ac                mainMenu
- *fill*         0x000000000800628e        0x2 
+                0x0000000008006358      0x1e2 Src/figuras.o
+                0x0000000008006358                mainMenu
+ *fill*         0x000000000800653a        0x2 
  .rodata.p1_idle
-                0x0000000008006290       0x22 Src/figuras.o
-                0x0000000008006290                p1_idle
- *fill*         0x00000000080062b2        0x2 
+                0x000000000800653c       0x22 Src/figuras.o
+                0x000000000800653c                p1_idle
+ *fill*         0x000000000800655e        0x2 
  .rodata.quatro
-                0x00000000080062b4       0x12 Src/figuras.o
-                0x00000000080062b4                quatro
- *fill*         0x00000000080062c6        0x2 
+                0x0000000008006560       0x12 Src/figuras.o
+                0x0000000008006560                quatro
+ *fill*         0x0000000008006572        0x2 
  .rodata.recover
-                0x00000000080062c8       0x22 Src/figuras.o
-                0x00000000080062c8                recover
- *fill*         0x00000000080062ea        0x2 
+                0x0000000008006574       0x22 Src/figuras.o
+                0x0000000008006574                recover
+ *fill*         0x0000000008006596        0x2 
  .rodata.round_empty
-                0x00000000080062ec        0xa Src/figuras.o
-                0x00000000080062ec                round_empty
- *fill*         0x00000000080062f6        0x2 
+                0x0000000008006598        0xa Src/figuras.o
+                0x0000000008006598                round_empty
+ *fill*         0x00000000080065a2        0x2 
  .rodata.round_win
-                0x00000000080062f8        0xa Src/figuras.o
-                0x00000000080062f8                round_win
- *fill*         0x0000000008006302        0x2 
- .rodata.tres   0x0000000008006304       0x12 Src/figuras.o
-                0x0000000008006304                tres
- *fill*         0x0000000008006316        0x2 
- .rodata.um     0x0000000008006318       0x12 Src/figuras.o
-                0x0000000008006318                um
- *fill*         0x000000000800632a        0x2 
+                0x00000000080065a4        0xa Src/figuras.o
+                0x00000000080065a4                round_win
+ *fill*         0x00000000080065ae        0x2 
+ .rodata.tres   0x00000000080065b0       0x12 Src/figuras.o
+                0x00000000080065b0                tres
+ *fill*         0x00000000080065c2        0x2 
+ .rodata.um     0x00000000080065c4       0x12 Src/figuras.o
+                0x00000000080065c4                um
+ *fill*         0x00000000080065d6        0x2 
  .rodata.xablauSoft
-                0x000000000800632c      0x182 Src/figuras.o
-                0x000000000800632c                xablauSoft
- *fill*         0x00000000080064ae        0x2 
+                0x00000000080065d8      0x182 Src/figuras.o
+                0x00000000080065d8                xablauSoft
+ *fill*         0x000000000800675a        0x2 
  .rodata.str1.4
-                0x00000000080064b0       0x68 Src/main.o
+                0x000000000800675c       0x68 Src/main.o
  .rodata.AHBPrescTable
-                0x0000000008006518       0x10 Src/system_stm32f1xx.o
-                0x0000000008006518                AHBPrescTable
+                0x00000000080067c4       0x10 Src/system_stm32f1xx.o
+                0x00000000080067c4                AHBPrescTable
  .rodata.APBPrescTable
-                0x0000000008006528        0x8 Src/system_stm32f1xx.o
-                0x0000000008006528                APBPrescTable
-                0x0000000008006530                . = ALIGN (0x4)
+                0x00000000080067d4        0x8 Src/system_stm32f1xx.o
+                0x00000000080067d4                APBPrescTable
+                0x00000000080067dc                . = ALIGN (0x4)
 
-.rel.dyn        0x0000000008006530        0x0
- .rel.iplt      0x0000000008006530        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x00000000080067dc        0x0
+ .rel.iplt      0x00000000080067dc        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.ARM.extab      0x0000000008006530        0x0
-                0x0000000008006530                . = ALIGN (0x4)
+.ARM.extab      0x00000000080067dc        0x0
+                0x00000000080067dc                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008006530                . = ALIGN (0x4)
+                0x00000000080067dc                . = ALIGN (0x4)
 
-.ARM            0x0000000008006530        0x0
-                0x0000000008006530                . = ALIGN (0x4)
-                0x0000000008006530                __exidx_start = .
+.ARM            0x00000000080067dc        0x0
+                0x00000000080067dc                . = ALIGN (0x4)
+                0x00000000080067dc                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008006530                __exidx_end = .
-                0x0000000008006530                . = ALIGN (0x4)
+                0x00000000080067dc                __exidx_end = .
+                0x00000000080067dc                . = ALIGN (0x4)
 
-.preinit_array  0x0000000008006530        0x0
-                0x0000000008006530                . = ALIGN (0x4)
-                0x0000000008006530                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x00000000080067dc        0x0
+                0x00000000080067dc                . = ALIGN (0x4)
+                0x00000000080067dc                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008006530                PROVIDE (__preinit_array_end = .)
-                0x0000000008006530                . = ALIGN (0x4)
+                0x00000000080067dc                PROVIDE (__preinit_array_end = .)
+                0x00000000080067dc                . = ALIGN (0x4)
 
-.init_array     0x0000000008006530        0x4
-                0x0000000008006530                . = ALIGN (0x4)
-                0x0000000008006530                PROVIDE (__init_array_start = .)
+.init_array     0x00000000080067dc        0x4
+                0x00000000080067dc                . = ALIGN (0x4)
+                0x00000000080067dc                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008006530        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x0000000008006534                PROVIDE (__init_array_end = .)
-                0x0000000008006534                . = ALIGN (0x4)
+ .init_array    0x00000000080067dc        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x00000000080067e0                PROVIDE (__init_array_end = .)
+                0x00000000080067e0                . = ALIGN (0x4)
 
-.fini_array     0x0000000008006534        0x4
-                0x0000000008006534                . = ALIGN (0x4)
+.fini_array     0x00000000080067e0        0x4
+                0x00000000080067e0                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008006534        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .fini_array    0x00000000080067e0        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008006538                . = ALIGN (0x4)
-                0x0000000008006538                _sidata = LOADADDR (.data)
+                0x00000000080067e4                . = ALIGN (0x4)
+                0x00000000080067e4                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x3b0 load address 0x0000000008006538
+.data           0x0000000020000000      0x3f8 load address 0x00000000080067e4
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -2235,207 +2276,213 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .data.input_buffer2
                 0x0000000020000054        0xc Src/Bot.o
                 0x0000000020000054                input_buffer2
+ .data.StateMachine_Bot0
+                0x0000000020000060       0x48 Src/Bot0.o
+                0x0000000020000060                StateMachine_Bot0
  .data.SmState_Botao1
-                0x0000000020000060        0x1 Src/Botao1FSM.o
-                0x0000000020000060                SmState_Botao1
- *fill*         0x0000000020000061        0x3 
+                0x00000000200000a8        0x1 Src/Botao1FSM.o
+                0x00000000200000a8                SmState_Botao1
+ *fill*         0x00000000200000a9        0x3 
  .data.StateMachine_Botao1
-                0x0000000020000064       0x18 Src/Botao1FSM.o
-                0x0000000020000064                StateMachine_Botao1
+                0x00000000200000ac       0x18 Src/Botao1FSM.o
+                0x00000000200000ac                StateMachine_Botao1
  .data.ATKSymbol
-                0x000000002000007c        0x1 Src/Interpreter1FSM.o
-                0x000000002000007c                ATKSymbol
+                0x00000000200000c4        0x1 Src/Interpreter1FSM.o
+                0x00000000200000c4                ATKSymbol
  .data.LeftSymbol
-                0x000000002000007d        0x1 Src/Interpreter1FSM.o
-                0x000000002000007d                LeftSymbol
+                0x00000000200000c5        0x1 Src/Interpreter1FSM.o
+                0x00000000200000c5                LeftSymbol
  .data.NeutralSymbol
-                0x000000002000007e        0x1 Src/Interpreter1FSM.o
-                0x000000002000007e                NeutralSymbol
+                0x00000000200000c6        0x1 Src/Interpreter1FSM.o
+                0x00000000200000c6                NeutralSymbol
  .data.RightSymbol
-                0x000000002000007f        0x1 Src/Interpreter1FSM.o
-                0x000000002000007f                RightSymbol
+                0x00000000200000c7        0x1 Src/Interpreter1FSM.o
+                0x00000000200000c7                RightSymbol
  .data.SmState_Int1
-                0x0000000020000080        0x1 Src/Interpreter1FSM.o
-                0x0000000020000080                SmState_Int1
- *fill*         0x0000000020000081        0x3 
+                0x00000000200000c8        0x1 Src/Interpreter1FSM.o
+                0x00000000200000c8                SmState_Int1
+ *fill*         0x00000000200000c9        0x3 
  .data.StateMachine_Interpretador
-                0x0000000020000084       0x50 Src/Interpreter1FSM.o
-                0x0000000020000084                StateMachine_Interpretador
+                0x00000000200000cc       0x50 Src/Interpreter1FSM.o
+                0x00000000200000cc                StateMachine_Interpretador
  .data.input_buffer1
-                0x00000000200000d4        0xc Src/Interpreter1FSM.o
-                0x00000000200000d4                input_buffer1
+                0x000000002000011c        0xc Src/Interpreter1FSM.o
+                0x000000002000011c                input_buffer1
  .data.StateMachine_Menu
-                0x00000000200000e0       0x48 Src/MenuFSM.o
-                0x00000000200000e0                StateMachine_Menu
+                0x0000000020000128       0x48 Src/MenuFSM.o
+                0x0000000020000128                StateMachine_Menu
  .data.StateMachine_P1
-                0x0000000020000128       0x88 Src/P1_FSM.o
-                0x0000000020000128                StateMachine_P1
+                0x0000000020000170       0x88 Src/P1_FSM.o
+                0x0000000020000170                StateMachine_P1
  .data.StateMachine_P1View
-                0x00000000200001b0       0x88 Src/P1_ViewFSM.o
-                0x00000000200001b0                StateMachine_P1View
- .data.posP1    0x0000000020000238       0x18 Src/P1_ViewFSM.o
-                0x0000000020000238                posP1
+                0x00000000200001f8       0x88 Src/P1_ViewFSM.o
+                0x00000000200001f8                StateMachine_P1View
+ .data.posP1    0x0000000020000280       0x18 Src/P1_ViewFSM.o
+                0x0000000020000280                posP1
  .data.rstartP1
-                0x0000000020000250       0x18 Src/P1_ViewFSM.o
-                0x0000000020000250                rstartP1
+                0x0000000020000298       0x18 Src/P1_ViewFSM.o
+                0x0000000020000298                rstartP1
  .data.SmState_Int2
-                0x0000000020000268        0x1 Src/P2_FSM.o
-                0x0000000020000268                SmState_Int2
- *fill*         0x0000000020000269        0x3 
+                0x00000000200002b0        0x1 Src/P2_FSM.o
+                0x00000000200002b0                SmState_Int2
+ *fill*         0x00000000200002b1        0x3 
  .data.StateMachine_P2
-                0x000000002000026c       0x88 Src/P2_FSM.o
-                0x000000002000026c                StateMachine_P2
+                0x00000000200002b4       0x88 Src/P2_FSM.o
+                0x00000000200002b4                StateMachine_P2
  .data.StateMachine_P2View
-                0x00000000200002f4       0x88 Src/P2_ViewFSM.o
-                0x00000000200002f4                StateMachine_P2View
- .data.posP2    0x000000002000037c       0x18 Src/P2_ViewFSM.o
-                0x000000002000037c                posP2
+                0x000000002000033c       0x88 Src/P2_ViewFSM.o
+                0x000000002000033c                StateMachine_P2View
+ .data.posP2    0x00000000200003c4       0x18 Src/P2_ViewFSM.o
+                0x00000000200003c4                posP2
  .data.rstartP2
-                0x0000000020000394       0x18 Src/P2_ViewFSM.o
-                0x0000000020000394                rstartP2
+                0x00000000200003dc       0x18 Src/P2_ViewFSM.o
+                0x00000000200003dc                rstartP2
  .data.SystemCoreClock
-                0x00000000200003ac        0x4 Src/system_stm32f1xx.o
-                0x00000000200003ac                SystemCoreClock
-                0x00000000200003b0                . = ALIGN (0x4)
-                0x00000000200003b0                _edata = .
+                0x00000000200003f4        0x4 Src/system_stm32f1xx.o
+                0x00000000200003f4                SystemCoreClock
+                0x00000000200003f8                . = ALIGN (0x4)
+                0x00000000200003f8                _edata = .
 
-.igot.plt       0x00000000200003b0        0x0 load address 0x00000000080068e8
- .igot.plt      0x00000000200003b0        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x00000000200003b0                . = ALIGN (0x4)
+.igot.plt       0x00000000200003f8        0x0 load address 0x0000000008006bdc
+ .igot.plt      0x00000000200003f8        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x00000000200003f8                . = ALIGN (0x4)
 
-.bss            0x00000000200003b0     0x1c5c load address 0x00000000080068e8
-                0x00000000200003b0                _sbss = .
-                0x00000000200003b0                __bss_start__ = _sbss
+.bss            0x00000000200003f8     0x1c5c load address 0x0000000008006bdc
+                0x00000000200003f8                _sbss = .
+                0x00000000200003f8                __bss_start__ = _sbss
  *(.bss)
- .bss           0x00000000200003b0       0x1c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .bss           0x00000000200003f8       0x1c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.bss*)
  .bss.pxCurrentTCB
-                0x00000000200003cc        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x00000000200003cc                pxCurrentTCB
+                0x0000000020000414        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000020000414                pxCurrentTCB
  .bss.pxDelayedTaskList
-                0x00000000200003d0        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000020000418        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x00000000200003d4        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x000000002000041c        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.pxReadyTasksLists
-                0x00000000200003d8       0x8c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000020000420       0x8c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.uxCurrentNumberOfTasks
-                0x0000000020000464        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxDeletedTasksWaitingCleanUp
-                0x0000000020000468        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxPendedTicks
-                0x000000002000046c        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxSchedulerSuspended
-                0x0000000020000470        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxTaskNumber
-                0x0000000020000474        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxTopReadyPriority
-                0x0000000020000478        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xDelayedTaskList1
-                0x000000002000047c       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xDelayedTaskList2
-                0x0000000020000490       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xIdleTaskHandle
-                0x00000000200004a4        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xNextTaskUnblockTime
-                0x00000000200004a8        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xNumOfOverflows
                 0x00000000200004ac        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xPendingReadyList
-                0x00000000200004b0       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xSchedulerRunning
-                0x00000000200004c4        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xSuspendedTaskList
-                0x00000000200004c8       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xTasksWaitingTermination
-                0x00000000200004dc       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xTickCount
+ .bss.uxDeletedTasksWaitingCleanUp
+                0x00000000200004b0        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.uxPendedTicks
+                0x00000000200004b4        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.uxSchedulerSuspended
+                0x00000000200004b8        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.uxTaskNumber
+                0x00000000200004bc        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.uxTopReadyPriority
+                0x00000000200004c0        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xDelayedTaskList1
+                0x00000000200004c4       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xDelayedTaskList2
+                0x00000000200004d8       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xIdleTaskHandle
+                0x00000000200004ec        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xNextTaskUnblockTime
                 0x00000000200004f0        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xYieldPending
+ .bss.xNumOfOverflows
                 0x00000000200004f4        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xPendingReadyList
+                0x00000000200004f8       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xSchedulerRunning
+                0x000000002000050c        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xSuspendedTaskList
+                0x0000000020000510       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xTasksWaitingTermination
+                0x0000000020000524       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xTickCount
+                0x0000000020000538        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xYieldPending
+                0x000000002000053c        0x4 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.ucMaxSysCallPriority
-                0x00000000200004f8        0x1 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
- *fill*         0x00000000200004f9        0x3 
+                0x0000000020000540        0x1 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+ *fill*         0x0000000020000541        0x3 
  .bss.ulMaxPRIGROUPValue
-                0x00000000200004fc        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
- .bss.pxEnd     0x0000000020000500        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss.ucHeap    0x0000000020000504     0x1800 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000020000544        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+ .bss.pxEnd     0x0000000020000548        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .bss.ucHeap    0x000000002000054c     0x1800 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.xBlockAllocatedBit
-                0x0000000020001d04        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000020001d4c        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.xFreeBytesRemaining
-                0x0000000020001d08        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000020001d50        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.xMinimumEverFreeBytesRemaining
-                0x0000000020001d0c        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss.xStart    0x0000000020001d10        0x8 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000020001d54        0x4 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .bss.xStart    0x0000000020001d58        0x8 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.SmState_Bot1
-                0x0000000020001d18        0x1 Src/Bot.o
-                0x0000000020001d18                SmState_Bot1
+                0x0000000020001d60        0x1 Src/Bot.o
+                0x0000000020001d60                SmState_Bot1
+ .bss.SmState_Bot0
+                0x0000000020001d61        0x1 Src/Bot0.o
+                0x0000000020001d61                SmState_Bot0
  .bss.nivelDeColisao
-                0x0000000020001d19        0x1 Src/Detector.o
-                0x0000000020001d19                nivelDeColisao
- *fill*         0x0000000020001d1a        0x2 
+                0x0000000020001d62        0x1 Src/Detector.o
+                0x0000000020001d62                nivelDeColisao
+ *fill*         0x0000000020001d63        0x1 
  .bss.adc_value1
-                0x0000000020001d1c        0x4 Src/Interpreter1FSM.o
-                0x0000000020001d1c                adc_value1
+                0x0000000020001d64        0x4 Src/Interpreter1FSM.o
+                0x0000000020001d64                adc_value1
  .bss.SmState_Menu
-                0x0000000020001d20        0x1 Src/MenuFSM.o
-                0x0000000020001d20                SmState_Menu
+                0x0000000020001d68        0x1 Src/MenuFSM.o
+                0x0000000020001d68                SmState_Menu
  .bss.round_count
-                0x0000000020001d21        0x1 Src/MenuFSM.o
-                0x0000000020001d21                round_count
+                0x0000000020001d69        0x1 Src/MenuFSM.o
+                0x0000000020001d69                round_count
  .bss.round_countP1
-                0x0000000020001d22        0x1 Src/MenuFSM.o
-                0x0000000020001d22                round_countP1
+                0x0000000020001d6a        0x1 Src/MenuFSM.o
+                0x0000000020001d6a                round_countP1
  .bss.round_countP2
-                0x0000000020001d23        0x1 Src/MenuFSM.o
-                0x0000000020001d23                round_countP2
- .bss.fb        0x0000000020001d24      0x1f8 Src/NOKIA5110_fb.o
+                0x0000000020001d6b        0x1 Src/MenuFSM.o
+                0x0000000020001d6b                round_countP2
+ .bss.fb        0x0000000020001d6c      0x1f8 Src/NOKIA5110_fb.o
  .bss.indice_fb
-                0x0000000020001f1c        0x4 Src/NOKIA5110_fb.o
+                0x0000000020001f64        0x4 Src/NOKIA5110_fb.o
  .bss.SmState_P1
-                0x0000000020001f20        0x1 Src/P1_FSM.o
-                0x0000000020001f20                SmState_P1
+                0x0000000020001f68        0x1 Src/P1_FSM.o
+                0x0000000020001f68                SmState_P1
  .bss.SmState_P2
-                0x0000000020001f21        0x1 Src/P2_FSM.o
-                0x0000000020001f21                SmState_P2
+                0x0000000020001f69        0x1 Src/P2_FSM.o
+                0x0000000020001f69                SmState_P2
  *(COMMON)
- *fill*         0x0000000020001f22        0x2 
- COMMON         0x0000000020001f24        0x4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
-                0x0000000020001f24                uwTick
- COMMON         0x0000000020001f28        0xc Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
-                0x0000000020001f28                tela
-                0x0000000020001f2c                input2
-                0x0000000020001f30                input1
- COMMON         0x0000000020001f34       0x74 Src/ARM_inits.o
-                0x0000000020001f34                hadc2
-                0x0000000020001f64                hadc1
-                0x0000000020001f94                hrtc
- COMMON         0x0000000020001fa8       0x24 Src/main.o
-                0x0000000020001fa8                defaultTaskHandle
-                0x0000000020001fac                InterpreterTaskHandle
-                0x0000000020001fb0                P2ViewHandle
-                0x0000000020001fb4                Bot1Handle
-                0x0000000020001fb8                P1ViewHandle
-                0x0000000020001fbc                botaoTaskHandle
-                0x0000000020001fc0                P2TaskHandle
-                0x0000000020001fc4                P1TaskHandle
-                0x0000000020001fc8                MenuTaskHandle
- COMMON         0x0000000020001fcc       0x40 Src/stm32f1xx_hal_timebase_tim.o
-                0x0000000020001fcc                htim4
-                0x000000002000200c                . = ALIGN (0x4)
-                0x000000002000200c                _ebss = .
-                0x000000002000200c                __bss_end__ = _ebss
+ *fill*         0x0000000020001f6a        0x2 
+ COMMON         0x0000000020001f6c        0x4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+                0x0000000020001f6c                uwTick
+ COMMON         0x0000000020001f70        0xc Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+                0x0000000020001f70                tela
+                0x0000000020001f74                input2
+                0x0000000020001f78                input1
+ COMMON         0x0000000020001f7c       0x74 Src/ARM_inits.o
+                0x0000000020001f7c                hadc2
+                0x0000000020001fac                hadc1
+                0x0000000020001fdc                hrtc
+ COMMON         0x0000000020001ff0       0x24 Src/main.o
+                0x0000000020001ff0                defaultTaskHandle
+                0x0000000020001ff4                InterpreterTaskHandle
+                0x0000000020001ff8                P2ViewHandle
+                0x0000000020001ffc                Bot1Handle
+                0x0000000020002000                P1ViewHandle
+                0x0000000020002004                botaoTaskHandle
+                0x0000000020002008                P2TaskHandle
+                0x000000002000200c                P1TaskHandle
+                0x0000000020002010                MenuTaskHandle
+ COMMON         0x0000000020002014       0x40 Src/stm32f1xx_hal_timebase_tim.o
+                0x0000000020002014                htim4
+                0x0000000020002054                . = ALIGN (0x4)
+                0x0000000020002054                _ebss = .
+                0x0000000020002054                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x000000002000200c      0x604 load address 0x00000000080068e8
-                0x0000000020002010                . = ALIGN (0x8)
- *fill*         0x000000002000200c        0x4 
-                0x0000000020002010                PROVIDE (end = .)
+                0x0000000020002054      0x604 load address 0x0000000008006bdc
+                0x0000000020002058                . = ALIGN (0x8)
+ *fill*         0x0000000020002054        0x4 
+                0x0000000020002058                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020002210                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020002010      0x200 
-                0x0000000020002610                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020002210      0x400 
-                0x0000000020002610                . = ALIGN (0x8)
+                0x0000000020002258                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020002058      0x200 
+                0x0000000020002658                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020002258      0x400 
+                0x0000000020002658                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -2486,47 +2533,49 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .ARM.attributes
                 0x00000000000003ad       0x33 Src/Bot.o
  .ARM.attributes
-                0x00000000000003e0       0x33 Src/Botao1FSM.o
+                0x00000000000003e0       0x33 Src/Bot0.o
  .ARM.attributes
-                0x0000000000000413       0x33 Src/Detector.o
+                0x0000000000000413       0x33 Src/Botao1FSM.o
  .ARM.attributes
-                0x0000000000000446       0x33 Src/Interpreter1FSM.o
+                0x0000000000000446       0x33 Src/Detector.o
  .ARM.attributes
-                0x0000000000000479       0x33 Src/MenuFSM.o
+                0x0000000000000479       0x33 Src/Interpreter1FSM.o
  .ARM.attributes
-                0x00000000000004ac       0x33 Src/NOKIA5110_fb.o
+                0x00000000000004ac       0x33 Src/MenuFSM.o
  .ARM.attributes
-                0x00000000000004df       0x33 Src/P1_FSM.o
+                0x00000000000004df       0x33 Src/NOKIA5110_fb.o
  .ARM.attributes
-                0x0000000000000512       0x33 Src/P1_ViewFSM.o
+                0x0000000000000512       0x33 Src/P1_FSM.o
  .ARM.attributes
-                0x0000000000000545       0x33 Src/P2_FSM.o
+                0x0000000000000545       0x33 Src/P1_ViewFSM.o
  .ARM.attributes
-                0x0000000000000578       0x33 Src/P2_ViewFSM.o
+                0x0000000000000578       0x33 Src/P2_FSM.o
  .ARM.attributes
-                0x00000000000005ab       0x33 Src/delay.o
+                0x00000000000005ab       0x33 Src/P2_ViewFSM.o
  .ARM.attributes
-                0x00000000000005de       0x33 Src/figuras.o
+                0x00000000000005de       0x33 Src/delay.o
  .ARM.attributes
-                0x0000000000000611       0x33 Src/main.o
+                0x0000000000000611       0x33 Src/figuras.o
  .ARM.attributes
-                0x0000000000000644       0x33 Src/stm32f1xx_hal_msp.o
+                0x0000000000000644       0x33 Src/main.o
  .ARM.attributes
-                0x0000000000000677       0x33 Src/stm32f1xx_hal_timebase_tim.o
+                0x0000000000000677       0x33 Src/stm32f1xx_hal_msp.o
  .ARM.attributes
-                0x00000000000006aa       0x33 Src/stm32f1xx_it.o
+                0x00000000000006aa       0x33 Src/stm32f1xx_hal_timebase_tim.o
  .ARM.attributes
-                0x00000000000006dd       0x33 Src/system_stm32f1xx.o
+                0x00000000000006dd       0x33 Src/stm32f1xx_it.o
  .ARM.attributes
-                0x0000000000000710       0x21 Startup/startup_stm32f103c8tx.o
+                0x0000000000000710       0x33 Src/system_stm32f1xx.o
  .ARM.attributes
-                0x0000000000000731       0x2d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+                0x0000000000000743       0x21 Startup/startup_stm32f103c8tx.o
  .ARM.attributes
-                0x000000000000075e       0x2d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000000000764       0x2d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x000000000000078b       0x2d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memset.o)
+                0x0000000000000791       0x2d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x00000000000007b8       0x1d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x00000000000007be       0x2d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000000007eb       0x1d c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(footsies.elf elf32-littlearm)
 
 .comment        0x0000000000000000       0x7b
@@ -2549,6 +2598,7 @@ OUTPUT(footsies.elf elf32-littlearm)
  .comment       0x000000000000007b       0x7c Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .comment       0x000000000000007b       0x7c Src/ARM_inits.o
  .comment       0x000000000000007b       0x7c Src/Bot.o
+ .comment       0x000000000000007b       0x7c Src/Bot0.o
  .comment       0x000000000000007b       0x7c Src/Botao1FSM.o
  .comment       0x000000000000007b       0x7c Src/Detector.o
  .comment       0x000000000000007b       0x7c Src/Interpreter1FSM.o

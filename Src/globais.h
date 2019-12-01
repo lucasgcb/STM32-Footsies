@@ -1,5 +1,6 @@
 #ifndef globais_H_
 #define globais_H_
+
 typedef struct pontos{
 	uint32_t x1;
 	uint32_t y1;
@@ -112,6 +113,7 @@ extern StateType_Int2 SmState_Int2;
 extern StateType_PLAYER SmState_P1;
 extern StateType_PLAYER SmState_P2;
 extern StateType_Bot SmState_Bot1;
+extern StateType_Bot SmState_Bot0;
 
 extern const figura_t p1_idle;
 extern const figura_t ATK1;
@@ -161,4 +163,5 @@ void AdicionarNaLista1(char *add);
 char  lerDoInput1(uint8_t index);
 void AdicionarNaLista2(char *add);
 char  lerDoInput2(uint8_t index);
+void Rodar_Maquina_Bot0(void);
 #endif

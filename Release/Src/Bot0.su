@@ -1,0 +1,10 @@
+Bot0.c:26:6:Sm_OFFLINE0	0	static
+Bot0.c:33:6:Sm_APPROACH0	8	static
+Bot0.c:42:6:Sm_RETREAT0	8	static
+Bot0.c:65:6:Sm_ATTACK0	8	static
+Bot0.c:75:6:Sm_COMBO0	16	static
+Bot0.c:98:6:Sm_OBSERVE0	8	static
+Bot0.c:86:6:Sm_BAIT0	0	static
+Bot0.c:90:6:Sm_DEFEND0	8	static
+Bot0.c:51:6:Sm_MOVETOPUNISH0	8	static
+Bot0.c:144:6:Rodar_Maquina_Bot0	0	static

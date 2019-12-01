@@ -29,6 +29,7 @@
 #include "P2_FSM.h"
 #include "P2_ViewFSM.h"
 #include "Bot.h"
+#include "Bot0.h"
 #include "Detector.h"
 //// A fazer
 //// Arena
@@ -53,6 +54,7 @@ void P1(void const *argument);
 void P1View(void const *argument);
 void P2(void const *argument);
 void Bot1(void const *argument);
+void Bot0(void const *argument);
 void P2View(void const *argument);
 // Function Pointer for State Machines
 
@@ -68,7 +70,7 @@ int main(void)
 
   HAL_ADC_Start (&hadc1);
   MX_RTC_Init();
-  osThreadDef(InterpreterTask, InputInterpreter, osPriorityNormal, 0, 32);
+  osThreadDef(InterpreterTask, InputInterpreter, osPriorityNormal, 0, 64);
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 64);
   osThreadDef(botaoTask, ObservaBotao, osPriorityNormal, 0, 32);
   osThreadDef(MenuTask, Menu, osPriorityNormal, 0, 128);

@@ -240,16 +240,23 @@ void Rodar_Maquina_Interpretador(void)
 {
 	osDelay(10);
 	HAL_ADC_PollForConversion (&hadc1, 1000);
-	if(SmState_Int1 < NUM_STATES_Int1)
+	if(SmState_Bot0 == STATE_OFFLINE)
 	{
-		#ifdef DEBUG
-		print_seguro(20,20,input_buffer1);
-		#endif
-		(*StateMachine_Interpretador[SmState_Int1].func)();
+		if(SmState_Int1 < NUM_STATES_Int1)
+		{
+			#ifdef DEBUG
+			print_seguro(20,20,input_buffer1);
+			#endif
+			(*StateMachine_Interpretador[SmState_Int1].func)();
+		}
+		else
+		{
+			return;
+		}
 	}
 	else
 	{
-		return;
+		Rodar_Maquina_Bot0();
 	}
 }
 

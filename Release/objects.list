@@ -27,6 +27,7 @@
 "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
 "Src/ARM_inits.o"
 "Src/Bot.o"
+"Src/Bot0.o"
 "Src/Botao1FSM.o"
 "Src/Detector.o"
 "Src/Interpreter1FSM.o"
