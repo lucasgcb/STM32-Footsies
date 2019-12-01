@@ -23,50 +23,20 @@ StateMachineType_P1 StateMachine_P1View[] =
 		{STATE_PLAYER_Hit,Sm_P1View_Hit},
 		{STATE_PLAYER_Dying,Sm_P1View_Dying},
 		{STATE_PLAYER_Dead,Sm_P1View_Dead},
-};
-pontos_t  posP1 = {4,20};
-
-const figura_t p1_idle =
-{
-	16,
-	16,
- 	{0x0, 0x0, 0x0, 0x84, 0x44, 0x3f, 0x25, 0x25, 0x25, 0x3f, 0x40, 0x80, 0x80, 0x40, 0x80, 0x0, 0x0, 0x0, 0xe1, 0x9a, 0x44, 0xa4, 0x25, 0x26, 0x20, 0x20, 0x48, 0x54, 0xa4, 0x42, 0x81, 0x0}
+		{STATE_PLAYER_CLEAN,Sm_P1View_CLEAN},
 };
 
-const figura_t ATK1=
-{
-	16,
-	16,
- 	{0x20, 0x40, 0xe0, 0xa0, 0xa0, 0xa0, 0xe0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x78, 0x84, 0x27, 0xdc, 0x4, 0x14, 0x2f, 0x2a, 0x54, 0x74, 0x58, 0x40, 0x40, 0x78, 0x88, 0x70}
-};
+pontos_t  rstartP1 = {8,30};
+pontos_t  posP1 = {8,30};
 
-const figura_t ATK2=
+void Sm_P1View_CLEAN(void)
 {
-	16,
-	16,
- 	{0x88, 0xc8, 0xfe, 0x6a, 0xea, 0xaa, 0x3e, 0x60, 0xc0, 0x60, 0x20, 0x30, 0x98, 0x88, 0x68, 0x38, 0x3, 0x6, 0xff, 0x18, 0x0, 0x81, 0xe1, 0x3d, 0x5, 0x6, 0x2, 0x3, 0x1, 0x0, 0x0, 0x0}
-};
+	deleta_figura_seguro(&posP1, &p1_idle);
 
-const figura_t dashbck=
-{
-	16,
-	16,
- 	{0x80, 0x44, 0x24, 0x3f, 0xe5, 0x25, 0x25, 0xff, 0x60, 0xe4, 0x0, 0x24, 0x24, 0x24, 0x24, 0x24, 0xcf, 0xb0, 0x84, 0xe5, 0x14, 0x23, 0xe1, 0xcd, 0x93, 0xa1, 0xe0, 0x0, 0x0, 0x0, 0x1, 0x1}
-};
+	osDelay(1);
+	SmState_P1 = STATE_PLAYER_MENU;
+}
 
-const figura_t dashfwd=
-{
-	16,
-	16,
- 	{0x44, 0x44, 0x4, 0x4, 0x0, 0x80, 0x44, 0x24, 0x3f, 0xe5, 0x25, 0x25, 0xff, 0x60, 0xe0, 0x0, 0x4, 0x0, 0xe0, 0xa0, 0x90, 0xcf, 0xe0, 0x24, 0x15, 0xe4, 0x83, 0xb1, 0xcd, 0x3, 0x1, 0x0}
-};
-
-const figura_t recover=
-{
-	16,
-	16,
- 	{0x0, 0x0, 0x0, 0x84, 0x44, 0x3f, 0x25, 0x25, 0x25, 0x3f, 0x40, 0x80, 0x97, 0x40, 0x97, 0x0, 0x0, 0x0, 0xe1, 0x9a, 0x44, 0xa4, 0x25, 0x26, 0x20, 0x20, 0x48, 0x54, 0xa4, 0x42, 0x81, 0x0}
-};
 
 void Sm_P1View_MENU(void)
 {
@@ -74,20 +44,25 @@ void Sm_P1View_MENU(void)
 }
 void Sm_P1View_RoundStart(void)
 {
+	deleta_figura_seguro(&posP1, &p1_idle);
+	posP1.x1 = rstartP1.x1;
 	print_figura_seguro(&posP1, &p1_idle);
+	osDelay(updateRate);
 }
 void Sm_P1View_Idle(void)
 {
 	print_figura_seguro(&posP1, &p1_idle);
+	osDelay(updateRate);
 }
 void Sm_P1View_Idle_Recover(void)
 {
 	print_figura_seguro(&posP1, &p1_idle);
+	osDelay(updateRate);
 }
 void Sm_P1View_Forward(void)
 {
 	deleta_figura_seguro(&posP1, &p1_idle);
-	if(posP1.x1 < 70)
+	if(posP1.x1 < 70 && nivelDeColisao<2)
 		posP1.x1=posP1.x1 + 1;
 	print_figura_seguro(&posP1, &p1_idle);
 	osDelay(updateRate);
@@ -96,9 +71,11 @@ void Sm_P1View_Forward(void)
 void Sm_P1View_DashForward(void)
 {
 	deleta_figura_seguro(&posP1, &p1_idle);
+
 	if(posP1.x1 < 60)
 	{
-		posP1.x1=posP1.x1 + 10;
+			if(nivelDeColisao<2)
+					posP1.x1=posP1.x1 + 10;
 	}
 	else
 	{
@@ -121,19 +98,42 @@ void Sm_P1View_DashBack(void)
 void Sm_P1View_Back(void)
 {
 	deleta_figura_seguro(&posP1, &p1_idle);
-	if(posP1.x1 > 0)
+	if(posP1.x1 > 8)
 		posP1.x1=posP1.x1 - 1;
 	print_figura_seguro(&posP1, &p1_idle);
 	osDelay(updateRate);
 }
 void Sm_P1View_ATK1(void)
 {
+	if(nivelDeColisao>0)
+	{
+		if(SmState_P2 == STATE_PLAYER_Back || SmState_P2 == STATE_PLAYER_Block)
+		{
+			SmState_P2 = STATE_PLAYER_Block;
+		}
+		else
+		{
+			if(SmState_P2 != STATE_PLAYER_Dead && SmState_P2 != STATE_PLAYER_Dying )
+				SmState_P2 = STATE_PLAYER_Hit;
+		}
+	}
 	deleta_figura_seguro(&posP1, &p1_idle);
 	print_figura_seguro(&posP1, &ATK1);
 	osDelay(updateRate);
 }
 void Sm_P1View_ATK2(void)
 {
+	if(nivelDeColisao>0)
+	{
+		if(SmState_P2 == STATE_PLAYER_Back ||  SmState_P2 ==STATE_PLAYER_Block )
+		{
+			SmState_P2 = STATE_PLAYER_Block;
+		}
+		else
+		{
+			SmState_P2 = STATE_PLAYER_Dying;
+		}
+	}
 	deleta_figura_seguro(&posP1, &ATK1);
 	print_figura_seguro(&posP1, &ATK2);
 	osDelay(updateRate);
@@ -155,20 +155,28 @@ void Sm_P1View_ATK1_Recover(void)
 
 void Sm_P1View_Hit(void)
 {
-	osDelay(1);
+	deleta_figura_seguro(&posP1, &hit);
+	print_figura_seguro(&posP1, &hit);
+	osDelay(updateRate);
 }
 
 void Sm_P1View_Block(void)
 {
-	osDelay(1);
+	deleta_figura_seguro(&posP1, &block);
+	print_figura_seguro(&posP1, &block);
+	osDelay(updateRate);
 }
 void Sm_P1View_Dying(void)
 {
-	osDelay(1);
+	deleta_figura_seguro(&posP1, &block);
+	print_figura_seguro(&posP1, &dying);
+	osDelay(updateRate);
 }
 void Sm_P1View_Dead(void)
 {
-	osDelay(1);
+	deleta_figura_seguro(&posP1, &dead);
+	print_figura_seguro(&posP1, &dead);
+	osDelay(updateRate);
 }
 
 void Rodar_Maquina_P1View(void)

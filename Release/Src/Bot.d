@@ -1,5 +1,4 @@
-Src/Interpreter2FSM.o: ../Src/Interpreter2FSM.c ../Src/Interpreter2FSM.h \
- ../Src/ARM_inits.h ../Inc/main.h \
+Src/Bot.o: ../Src/Bot.c ../Src/Bot.h ../Src/ARM_inits.h ../Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -45,10 +44,10 @@ Src/Interpreter2FSM.o: ../Src/Interpreter2FSM.c ../Src/Interpreter2FSM.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Src/NOKIA5110_fb.h ../Src/delay.h ../Src/defPrincipais.h \
- ../Src/globais.h
+ ../Src/globais.h ../Src/NOKIA5110_fb.h ../Src/delay.h \
+ ../Src/defPrincipais.h
 
-../Src/Interpreter2FSM.h:
+../Src/Bot.h:
 
 ../Src/ARM_inits.h:
 
@@ -144,10 +143,10 @@ Src/Interpreter2FSM.o: ../Src/Interpreter2FSM.c ../Src/Interpreter2FSM.h \
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 
+../Src/globais.h:
+
 ../Src/NOKIA5110_fb.h:
 
 ../Src/delay.h:
 
 ../Src/defPrincipais.h:
-
-../Src/globais.h:

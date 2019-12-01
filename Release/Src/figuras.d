@@ -1,5 +1,5 @@
-Src/main.o: ../Src/main.c ../Src/ARM_inits.h ../Inc/main.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+Src/figuras.o: ../Src/figuras.c ../Src/figuras.h ../Src/ARM_inits.h \
+ ../Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -44,10 +44,9 @@ Src/main.o: ../Src/main.c ../Src/ARM_inits.h ../Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Src/NOKIA5110_fb.h ../Src/delay.h ../Src/defPrincipais.h \
- ../Src/globais.h ../Src/Botao1FSM.h ../Src/Interpreter1FSM.h \
- ../Src/MenuFSM.h ../Src/P1_FSM.h ../Src/P1_ViewFSM.h ../Src/P2_FSM.h \
- ../Src/P2_ViewFSM.h ../Src/Bot.h ../Src/Detector.h
+ ../Src/globais.h
+
+../Src/figuras.h:
 
 ../Src/ARM_inits.h:
 
@@ -143,28 +142,4 @@ Src/main.o: ../Src/main.c ../Src/ARM_inits.h ../Inc/main.h \
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 
-../Src/NOKIA5110_fb.h:
-
-../Src/delay.h:
-
-../Src/defPrincipais.h:
-
 ../Src/globais.h:
-
-../Src/Botao1FSM.h:
-
-../Src/Interpreter1FSM.h:
-
-../Src/MenuFSM.h:
-
-../Src/P1_FSM.h:
-
-../Src/P1_ViewFSM.h:
-
-../Src/P2_FSM.h:
-
-../Src/P2_ViewFSM.h:
-
-../Src/Bot.h:
-
-../Src/Detector.h:

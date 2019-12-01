@@ -22,6 +22,7 @@ void Sm_P1View_Hit(void);
 void Sm_P1View_Block(void);
 void Sm_P1View_Dying(void);
 void Sm_P1View_Dead(void);
+void Sm_P1View_CLEAN(void);
 void Rodar_Maquina_P1View(void);
 
 // and end with:

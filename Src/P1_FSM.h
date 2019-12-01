@@ -22,6 +22,7 @@ void Sm_P1_Hit(void);
 void Sm_P1_Block(void);
 void Sm_P1_Dying(void);
 void Sm_P1_Dead(void);
+void Sm_P1_CLEAN(void);
 void Rodar_Maquina_P1(void);
 
 // and end with:

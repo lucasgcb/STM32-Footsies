@@ -23,10 +23,13 @@
 #include "NOKIA5110_fb.h"
 #include "Botao1FSM.h"
 #include "Interpreter1FSM.h"
-#include "Interpreter2FSM.h"
 #include "MenuFSM.h"
 #include "P1_FSM.h"
 #include "P1_ViewFSM.h"
+#include "P2_FSM.h"
+#include "P2_ViewFSM.h"
+#include "Bot.h"
+#include "Detector.h"
 //// A fazer
 //// Arena
 //// Ver P2 -> ativar ADC2. Vai apagar tudo
@@ -36,17 +39,21 @@
 
 osThreadId defaultTaskHandle;
 osThreadId InterpreterTaskHandle;
-osThreadId Interpreter2TaskHandle;
 osThreadId botaoTaskHandle;
 osThreadId MenuTaskHandle;
 osThreadId P1TaskHandle;
 osThreadId P1ViewHandle;
+osThreadId P2TaskHandle;
+osThreadId P2ViewHandle;
+osThreadId Bot1Handle;
 void StartDefaultTask(void const * argument);
 void InputInterpreter(void const * argument);
-void InputInterpreter2(void const * argument);
 void Menu(void const * argument);
 void P1(void const *argument);
 void P1View(void const *argument);
+void P2(void const *argument);
+void Bot1(void const *argument);
+void P2View(void const *argument);
 // Function Pointer for State Machines
 
 
@@ -59,23 +66,26 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
 
-  HAL_ADC_Start (&hadc2);
   HAL_ADC_Start (&hadc1);
   MX_RTC_Init();
   osThreadDef(InterpreterTask, InputInterpreter, osPriorityNormal, 0, 32);
-  osThreadDef(Interpreter2Task, InputInterpreter2, osPriorityNormal, 0, 128);
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 64);
   osThreadDef(botaoTask, ObservaBotao, osPriorityNormal, 0, 32);
-  osThreadDef(MenuTask, Menu, osPriorityNormal, 0, 64);
+  osThreadDef(MenuTask, Menu, osPriorityNormal, 0, 128);
   osThreadDef(P1Task, P1, osPriorityNormal, 0, 64);
   osThreadDef(P1ViewTask, P1View, osPriorityNormal, 0, 64);
+  osThreadDef(P2Task, P2, osPriorityNormal, 0, 64);
+  osThreadDef(P2ViewTask, P2View, osPriorityNormal, 0, 64);
+  osThreadDef(Bot1Task, Bot1, osPriorityNormal, 0, 64);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
   InterpreterTaskHandle = osThreadCreate(osThread(InterpreterTask), NULL);
-  Interpreter2TaskHandle = osThreadCreate(osThread(Interpreter2Task), NULL);
   botaoTaskHandle = osThreadCreate(osThread(botaoTask), NULL);
   MenuTaskHandle = osThreadCreate(osThread(MenuTask), NULL);
   P1TaskHandle = osThreadCreate(osThread(P1Task), NULL);
   P1ViewHandle = osThreadCreate(osThread(P1ViewTask), NULL);
+  P2TaskHandle = osThreadCreate(osThread(P2Task), NULL);
+  P2ViewHandle = osThreadCreate(osThread(P2ViewTask), NULL);
+  Bot1Handle = osThreadCreate(osThread(Bot1Task), NULL);
   osKernelStart();
   
   while (1)
@@ -83,7 +93,35 @@ int main(void)
   }
 }
 
+void Bot1(void const * argument)
+{
+	input2 = xSemaphoreCreateBinary();
+	xSemaphoreGive(input2);
+	for(;;)
+	{
+		osDelay(1);
+		Rodar_Maquina_Bot1();
+	}
+}
 
+
+
+void P2(void const * argument)
+{
+	for(;;)
+	{
+		osDelay(1);
+		Rodar_Maquina_P2();
+	}
+}
+
+void P2View(void const *argument)
+{
+	while(1)
+	{
+		Rodar_Maquina_P2View();
+	}
+}
 
 void P1(void const * argument)
 {
@@ -94,27 +132,18 @@ void P1(void const * argument)
 	}
 }
 
+void P1View(void const *argument)
+{
+	while(1)
+	{
+		Rodar_Maquina_P1View();
+	}
+}
 void Menu(void const * argument)
 {
 	for(;;)
 	{
 		Rodar_Maquina_Menu();
-	}
-}
-void InputInterpreter2(void const * argument)
-{
-	uint16_t value;
-	char value_str[10];
-	HAL_ADC_Start (&hadc2);
-	input2 = xSemaphoreCreateBinary();
-	xSemaphoreGive(input2);
-	for(;;)
-	{
-		HAL_ADC_PollForConversion (&hadc2, 1000);
-		value = HAL_ADC_GetValue (&hadc2);
-		itoa(value,value_str,10);
-		print_seguro(0,0,value_str);
-		Rodar_Maquina_Interpretador2();
 	}
 }
 
@@ -142,6 +171,7 @@ void StartDefaultTask(void const * argument)
   for(;;)
   {
 	  osDelay(41);
+	  detectarColisao();
 	  imprime_LCD();
   }
   /* USER CODE END 5 */
@@ -154,13 +184,6 @@ void ObservaBotao(void const *argument)
 	}
 }
 
-void P1View(void const *argument)
-{
-	while(1)
-	{
-		Rodar_Maquina_P1View();
-	}
-}
 
 
 

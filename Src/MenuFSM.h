@@ -15,6 +15,7 @@ void Sm_Arena1P_RoundStart(void);
 void Sm_Arena1P_ONGOING(void);
 void Sm_Arena2P_RoundStart(void);
 void Sm_Arena2P_ONGOING(void);
+void print_rounds(void);
 void print_roundstart(void);
 void Sm_GameOver(void);
 void Rodar_Maquina_Menu(void);

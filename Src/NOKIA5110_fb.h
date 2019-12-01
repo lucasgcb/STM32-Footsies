@@ -40,7 +40,9 @@
 
 void print_seguro(uint32_t x,uint32_t y, char *buff);
 void print_figura_seguro(pontos_t *p, const figura_t *figura);
+void print_figura_invertido_seguro(pontos_t *p, const figura_t *figura);
 void deleta_figura_seguro(pontos_t *p, const figura_t *figura);
+void deleta_figura_invertido_seguro(pontos_t *p, const figura_t *figura);
 void caceta();
 void cmd_LCD(uint32_t data);
 void data_LCD(uint32_t data);
@@ -61,7 +63,9 @@ void desenha_circulo(int32_t x0, int32_t y0, int32_t radius, uint32_t prop);
 void desenha_retangulo( pontos_t *t, uint32_t prop);
 void desenha_triangulo(pontos_t *p, uint32_t prop);
 void desenha_fig( pontos_t *p, const figura_t *figura);
+void desenha_fig_invertido( pontos_t *p, const figura_t *f);
 void deleta_fig( pontos_t *p, const figura_t *figura);
+void deleta_fig_invertido(pontos_t *p, const figura_t *figura);
 
 void escreve_Nr_Peq(uint32_t x, uint32_t y, int32_t valor, uint32_t quant2Print);
 
