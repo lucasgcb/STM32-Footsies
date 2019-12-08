@@ -6,6 +6,8 @@ The objective of this bootleg game is to hit your opponent with a heavy kick. Ta
 
 Heavy kicks take very long to recover and can be blocked by holding back, leaving you vulnerable in the event it missed or was blocked by the opponent.
 
+Players can dash forwards and backwards by tapping the desired direction twice.
+
 ### Images
 
 ![pic1](./doc/img/picmenu.jpg)
