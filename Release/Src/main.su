@@ -6,5 +6,5 @@ main.c:137:6:P1View	8	static
 main.c:144:6:Menu	8	static
 main.c:152:6:InputInterpreter	8	static
 main.c:161:6:StartDefaultTask	8	static
-main.c:181:6:ObservaBotao	8	static
+main.c:175:6:ObservaBotao	8	static
 main.c:62:5:main	192	static

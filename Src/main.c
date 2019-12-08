@@ -164,12 +164,6 @@ void StartDefaultTask(void const * argument)
 	  inic_LCD();
 	  limpa_LCD();
 	  xSemaphoreGive(tela);
-	  	// --------------------------------------------------------------------------------------
-	  	// inicializa tela
-
-
-  /* USER CODE BEGIN 5 */
-  /* Infinite loop */
   for(;;)
   {
 	  osDelay(41);
