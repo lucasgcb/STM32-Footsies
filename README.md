@@ -21,3 +21,11 @@ The hardware requirements are:
 The pinout for the Bluepill board is:
 
 ![pinout](./doc/img/pinout.png)
+
+
+### Notes
+
+The analog joystick is powered with 5V and goes into the A0 (ADC1) pin. It may need tweaking and recompiling in the code since the joystick I used was wack and read values a bit off. Simply tweak [this function](https://github.com/lucasgcb/STM32-Footsies/blob/b2c8ca5e2d3732149facf05cf5b7d882d2eb8d70/Src/Interpreter1FSM.c#L58-L87) for the ADC levels for Right and Left, respectively.
+
+This software was developed with  STM32CubeMX and is implemented using FreeRTOS. There are 8 state machines which control the menu, player input, player view and player state, besides the bots.
+
