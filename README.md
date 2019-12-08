@@ -2,6 +2,10 @@
 
 This repository contains a bootleg version of the game [Footsies](https://hifight.github.io/footsies/) developed by HiFight. 
 
+The objective of this bootleg game is to hit your opponent with a heavy kick. Tapping attack once will execute a light kick, which can stun your opponent. Pressing attack once more during the recovery of a light kick will execute the heavy kick.
+
+Heavy kicks take very long to recover and can be blocked by holding back, leaving you vulnerable in the event it missed or was blocked by the opponent.
+
 ### Images
 
 ![pic1](./doc/img/picmenu.jpg)
